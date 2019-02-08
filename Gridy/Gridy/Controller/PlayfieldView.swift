@@ -9,14 +9,25 @@
 import UIKit
 
 class PlayfieldView: UIViewController {
-
+    var rawImage: UIImage?
+    @IBOutlet weak var puzzleImage: UICollectionView!
+    
+    func setImage() {
+        if let imageToSplit = rawImage {
+        test.image = imageToSplit
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        setImage()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBOutlet weak var test: UIImageView!
+    
+    
+    
     /*
     // MARK: - Navigation
 

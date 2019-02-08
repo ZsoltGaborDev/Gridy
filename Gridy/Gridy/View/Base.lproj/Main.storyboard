@@ -248,14 +248,27 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ic-PR-rYY">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1OS-hc-rPp">
+                                    <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hQ-DT-pl7">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lake" translatesAutoresizingMaskIntoConstraints="NO" id="YSC-Id-n1g">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="YSC-Id-n1g" secondAttribute="bottom" id="Jqi-Xe-3G2"/>
+                                            <constraint firstItem="YSC-Id-n1g" firstAttribute="leading" secondItem="5hQ-DT-pl7" secondAttribute="leading" id="M4b-SO-17q"/>
+                                            <constraint firstAttribute="trailing" secondItem="YSC-Id-n1g" secondAttribute="trailing" id="Qvx-Ct-xrA"/>
+                                            <constraint firstItem="YSC-Id-n1g" firstAttribute="top" secondItem="5hQ-DT-pl7" secondAttribute="top" id="mhv-2Q-zTY"/>
+                                        </constraints>
+                                    </view>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1OS-hc-rPp">
                                         <rect key="frame" x="39.5" y="251" width="335" height="360"/>
                                         <subviews>
-                                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lake" translatesAutoresizingMaskIntoConstraints="NO" id="f4c-dU-rpn">
+                                            <imageView opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lake" translatesAutoresizingMaskIntoConstraints="NO" id="f4c-dU-rpn">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="360"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="f4c-dU-rpn" firstAttribute="top" secondItem="1OS-hc-rPp" secondAttribute="top" id="E6G-UZ-RcU"/>
                                             <constraint firstAttribute="trailing" secondItem="f4c-dU-rpn" secondAttribute="trailing" id="JSP-Po-jKW"/>
@@ -265,25 +278,6 @@
                                             <constraint firstAttribute="height" constant="360" id="uPb-8H-b0i"/>
                                         </constraints>
                                     </view>
-                                    <visualEffectView opaque="NO" alpha="0.34999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLR-iC-acl">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tar-YV-3X9">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lake" translatesAutoresizingMaskIntoConstraints="NO" id="XYW-qu-Zi5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="XYW-qu-Zi5" secondAttribute="trailing" id="24I-sD-Awf"/>
-                                                <constraint firstItem="XYW-qu-Zi5" firstAttribute="leading" secondItem="tar-YV-3X9" secondAttribute="leading" id="9n2-LS-dK8"/>
-                                                <constraint firstItem="XYW-qu-Zi5" firstAttribute="top" secondItem="tar-YV-3X9" secondAttribute="top" id="hWg-mc-ANm"/>
-                                                <constraint firstAttribute="bottom" secondItem="XYW-qu-Zi5" secondAttribute="bottom" id="vw3-BO-cCR"/>
-                                            </constraints>
-                                        </view>
-                                        <blurEffect style="dark"/>
-                                    </visualEffectView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02C-hD-VhD">
                                         <rect key="frame" x="125" y="186" width="164.5" height="45"/>
                                         <constraints>
@@ -292,7 +286,7 @@
                                         <string key="text">Adjust the puzzle image:
 zoom, rotate, reposition.</string>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" red="0.5838611722" green="0.59603041410000002" blue="0.60413467880000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yta-pG-FET">
@@ -315,7 +309,7 @@ zoom, rotate, reposition.</string>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="StartButton:" destination="lnh-J7-Pqq" eventType="touchUpInside" id="dRz-xg-dZa"/>
-                                            <segue destination="bKF-eC-xzK" kind="show" id="9W2-Ki-jH4"/>
+                                            <segue destination="bKF-eC-xzK" kind="show" identifier="my2ndSegue" id="9W2-Ki-jH4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="diE-7Z-gN3" userLabel="X Button">
@@ -326,26 +320,25 @@ zoom, rotate, reposition.</string>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="40"/>
                                         <state key="normal" title="x">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" red="0.5838611722" green="0.59603041410000002" blue="0.60413467880000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="XButton:" destination="lnh-J7-Pqq" eventType="touchUpInside" id="Wvv-LS-6Ys"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="BLR-iC-acl" secondAttribute="bottom" constant="-34" id="04g-eM-mwl"/>
                                     <constraint firstAttribute="trailing" secondItem="diE-7Z-gN3" secondAttribute="trailing" constant="25" id="6NX-ea-9qF"/>
                                     <constraint firstItem="1OS-hc-rPp" firstAttribute="top" secondItem="02C-hD-VhD" secondAttribute="bottom" constant="20" id="EbP-dZ-UAA"/>
                                     <constraint firstAttribute="bottom" secondItem="Yta-pG-FET" secondAttribute="bottom" constant="40" id="Eqz-RM-Eef"/>
+                                    <constraint firstItem="5hQ-DT-pl7" firstAttribute="top" secondItem="0Ic-PR-rYY" secondAttribute="top" id="IAo-Wn-i2i"/>
                                     <constraint firstItem="Yta-pG-FET" firstAttribute="centerX" secondItem="0Ic-PR-rYY" secondAttribute="centerX" id="R5E-xD-bZh"/>
                                     <constraint firstItem="02C-hD-VhD" firstAttribute="centerX" secondItem="0Ic-PR-rYY" secondAttribute="centerX" id="T6Z-b0-YZ2"/>
+                                    <constraint firstAttribute="trailing" secondItem="5hQ-DT-pl7" secondAttribute="trailing" id="U4n-yK-gvE"/>
                                     <constraint firstItem="1OS-hc-rPp" firstAttribute="centerX" secondItem="0Ic-PR-rYY" secondAttribute="centerX" id="avT-F2-FsH"/>
-                                    <constraint firstItem="BLR-iC-acl" firstAttribute="top" secondItem="0Ic-PR-rYY" secondAttribute="top" id="csP-RY-UjJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="BLR-iC-acl" secondAttribute="trailing" id="hyg-5I-btb"/>
+                                    <constraint firstItem="5hQ-DT-pl7" firstAttribute="leading" secondItem="0Ic-PR-rYY" secondAttribute="leading" id="mAh-Cj-d1g"/>
                                     <constraint firstItem="1OS-hc-rPp" firstAttribute="centerY" secondItem="0Ic-PR-rYY" secondAttribute="centerY" id="mn1-4y-HyJ"/>
-                                    <constraint firstItem="BLR-iC-acl" firstAttribute="leading" secondItem="0Ic-PR-rYY" secondAttribute="leading" id="u2R-HL-fMq"/>
+                                    <constraint firstAttribute="bottom" secondItem="5hQ-DT-pl7" secondAttribute="bottom" constant="-34" id="xen-az-E1p"/>
                                     <constraint firstItem="diE-7Z-gN3" firstAttribute="top" secondItem="0Ic-PR-rYY" secondAttribute="top" constant="25" id="z6F-uX-eAv"/>
                                 </constraints>
                             </view>
@@ -361,13 +354,14 @@ zoom, rotate, reposition.</string>
                     </view>
                     <connections>
                         <outlet property="adjustThePuzzleImageLabel" destination="02C-hD-VhD" id="g0k-do-RWE"/>
-                        <outlet property="backgroundImage" destination="XYW-qu-Zi5" id="INc-HB-C3E"/>
-                        <outlet property="imageToSplit" destination="f4c-dU-rpn" id="21k-7p-rZk"/>
+                        <outlet property="backgroundImage" destination="YSC-Id-n1g" id="Fif-uX-6ta"/>
+                        <outlet property="creationFrame" destination="1OS-hc-rPp" id="xRQ-g5-jxg"/>
+                        <outlet property="creationImageView" destination="f4c-dU-rpn" id="zz7-T9-9GL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cxT-Dr-4Wp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="992.79999999999995" y="24.7376311844078"/>
+            <point key="canvasLocation" x="989.85507246376824" y="23.4375"/>
         </scene>
         <!--Playfield View-->
         <scene sceneID="lRH-CW-pUT">
@@ -773,6 +767,10 @@ swipe outof th egrid to undo</string>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f0d-Nk-foE">
+                                <rect key="frame" x="268" y="290" width="126" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -795,10 +793,14 @@ swipe outof th egrid to undo</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fj4-jo-vWc"/>
                     </view>
+                    <connections>
+                        <outlet property="puzzleImage" destination="FGc-FD-Ube" id="4kc-Ck-4WZ"/>
+                        <outlet property="test" destination="f0d-Nk-foE" id="n0z-Qo-aoe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SSo-9l-kRA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1855.2" y="26.53673163418291"/>
+            <point key="canvasLocation" x="1855.072463768116" y="26.116071428571427"/>
         </scene>
     </scenes>
     <resources>

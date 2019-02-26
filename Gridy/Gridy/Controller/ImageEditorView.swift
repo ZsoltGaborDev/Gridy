@@ -15,7 +15,7 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
     @IBOutlet weak var creationFrame: UIView!
     @IBOutlet weak var creationImageView: UIImageView!
     @IBAction func StartButton(_ sender: UIButton) {
-        composeCreationImage()
+        setImageToSend()
     }
     @IBAction func XButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -27,7 +27,8 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
     var panRecognizer: UIPanGestureRecognizer?
     var pinchRecognizer: UIPinchGestureRecognizer?
     var rotateRecognizer: UIRotationGestureRecognizer?
-    var screenshot = UIImage()
+    var screenshot = UIImage.init()
+    var toSend = [UIImage]()
     
     func setImage() {
         if let myImage = incomingImage {
@@ -80,30 +81,82 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
     }
     // mark sure you override this function to make gestures work together
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        // simultaneous gesture recognition will only be supported for creationImageView
+        if gestureRecognizer.view != creationImageView {
+            return false
+        }
+        // neither of the recognized gestures should not be tap gesture
+        if gestureRecognizer is UITapGestureRecognizer
+            || otherGestureRecognizer is UITapGestureRecognizer
+            || gestureRecognizer is UIPanGestureRecognizer
+            || otherGestureRecognizer is UIPanGestureRecognizer {
+            return false
+        }
         return true
     }
-    func composeCreationImage() -> UIImage {
+    func composeCreationImage() {
         UIGraphicsBeginImageContextWithOptions(creationFrame.bounds.size, false, 0)
         creationFrame.drawHierarchy(in: creationFrame.bounds, afterScreenUpdates: true)
         screenshot = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-        return screenshot
     }
+    func slice(screenshot: UIImage, into howMany: Int) -> [UIImage] {
+        let width: CGFloat
+        let height: CGFloat
+
+        switch screenshot.imageOrientation {
+        case .left, .leftMirrored, .right, .rightMirrored:
+            width = screenshot.size.height
+            height = screenshot.size.width
+        default:
+            width = screenshot.size.width
+            height = screenshot.size.height
+        }
+
+        let tileWidth = Int(width / CGFloat(howMany))
+        let tileHeight = Int(height / CGFloat(howMany))
+
+        let scale = Int(screenshot.scale)
+        var images = [UIImage]()
+        let cgImage = screenshot.cgImage!
+
+        var adjustedHeight = tileHeight
+
+        var y = 0
+        for row in 0 ..< howMany {
+            if row == (howMany - 1) {
+                adjustedHeight = Int(height) - y
+            }
+            var adjustedWidth = tileWidth
+            var x = 0
+            for column in 0 ..< howMany {
+                if column == (howMany - 1) {
+                    adjustedWidth = Int(width) - x
+                }
+                let origin = CGPoint(x: x * scale, y: y * scale)
+                let size = CGSize(width: adjustedWidth * scale, height: adjustedHeight * scale)
+                let tileCGImage = cgImage.cropping(to: CGRect(origin: origin, size: size))!
+                images.append(UIImage(cgImage: tileCGImage, scale: screenshot.scale, orientation: screenshot.imageOrientation))
+                x += tileWidth
+            }
+            y += tileHeight
+        }
+        return images
+    }
+    
+    func setImageToSend() {
+        composeCreationImage()
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.toSend = self.slice(screenshot: self.screenshot, into: 4)
+        }
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "my2ndSegue" {
             let vc2 = segue.destination as! PlayfieldView
-            vc2.rawImage = screenshot
+            vc2.toReceive = toSend
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 

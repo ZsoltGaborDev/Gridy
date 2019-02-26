@@ -38,7 +38,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure()
+        collectLocalImageSet()
         // Do any additional setup after loading the view.
     }
     func displayCamera() {
@@ -144,10 +144,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 localImages.append(image)
             }
         }
-    }
-    func configure() {
-        //collect images
-        collectLocalImageSet()
     }
 }
 

@@ -23,6 +23,7 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
     var toReceive = [UIImage]()
     var collectionOne = [UIImage]()
     var collectionTwo = [UIImage]()
+    let frame = UIView()
     
 //    func setup() {
 //        let puzzleImageWidth = (puzzleContainerView.frame.size.width - 30) / 4
@@ -33,30 +34,25 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
         super.viewDidLoad()
         collectionOne = toReceive
         collectionOne.shuffle()
-        
-        collectionView1.dragDelegate = self
-        collectionView2.dragDelegate = self
 
         collectionView1.dragInteractionEnabled = true
         collectionView2.dragInteractionEnabled = true
 
-        collectionView1.dropDelegate = self
-        collectionView2.dropDelegate = self
-
-        collectionView1.dataSource = self
-        collectionView2.dataSource = self
         print(collectionTwo.count)
     }
-    
     //number of views
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return collectionView == self.collectionView1 ? self.collectionOne.count : self.collectionTwo.count
     }
     //populate views
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView1.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! myCell
-        cell.myImageView.image = collectionOne[indexPath.item]
-        return cell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! myCell
+            if collectionView == collectionView1 {
+                cell.myImageView.image = collectionOne[indexPath.item]
+            } else {
+                cell.myImageView.image = collectionTwo[indexPath.item]
+            }
+            return cell
     }
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
         let item = self.collectionOne[indexPath.row]
@@ -65,16 +61,11 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
         dragItem.localObject = item
         return [dragItem]
     }
-    
-
     // MARK: - UICollectionViewDropDelegate METHODS
-    
     func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
         if collectionView === collectionView1 || collectionView === collectionView2 {
-            print(" is moving !!")
             return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
         } else {
-            print("something went wrong or wrong place to drop!")
             return UICollectionViewDropProposal(operation: .forbidden)
         }
     }
@@ -116,23 +107,16 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
                         collectionView.insertItems(at: [dIndexPath])
                         print(dIndexPath)
                     })
-                coordinator.drop(item.dragItem, toItemAt: dIndexPath)
+                    coordinator.drop(item.dragItem, toItemAt: dIndexPath)
                 }
             } else {
                 if collectionView == collectionView2 {
                     let items = coordinator.items
-                    print("number of items: \(items.count)") // console-check if the item exist
-                    let sourceIndexPath = items.first?.sourceIndexPath // the problem is that items.first?.sourceIndexPath is nil :(
                     let dIndexPath = destinationIndexPath
                     collectionView.performBatchUpdates({
                         self.collectionTwo.insert(items.first!.dragItem.localObject as! UIImage, at: dIndexPath.row)
-                        print("dIndexPath.row : \(dIndexPath.row)")
-                        //self.collectionOne.remove(at: sourceIndexPath!.row)
-                        //print(sourceIndexPath!.row)
                         collectionView.insertItems(at: [dIndexPath])
                         print(dIndexPath)
-                        //collectionView1.deleteItems(at: [sourceIndexPath!])
-                        //print(sourceIndexPath!)
                     })
                     coordinator.drop(items.first!.dragItem, toItemAt: dIndexPath)
                 }

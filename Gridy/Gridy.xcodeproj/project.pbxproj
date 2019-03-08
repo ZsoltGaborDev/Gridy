@@ -17,7 +17,6 @@
 		D7379C9422036CE100813362 /* ImageEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7379C9322036CE000813362 /* ImageEditorView.swift */; };
 		D7379C9622036EB200813362 /* PlayfieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7379C9522036EB200813362 /* PlayfieldView.swift */; };
 		D76B459A2211F75F001A999F /* myCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76B45992211F75F001A999F /* myCell.swift */; };
-		D76B45B922132260001A999F /* myPuzzleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76B45B822132260001A999F /* myPuzzleCell.swift */; };
 		D7A88B18220327BE000A9BCC /* timeburnernormal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7A88B17220327BE000A9BCC /* timeburnernormal.ttf */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +33,6 @@
 		D7379C9322036CE000813362 /* ImageEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorView.swift; sourceTree = "<group>"; };
 		D7379C9522036EB200813362 /* PlayfieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayfieldView.swift; sourceTree = "<group>"; };
 		D76B45992211F75F001A999F /* myCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCell.swift; sourceTree = "<group>"; };
-		D76B45B822132260001A999F /* myPuzzleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myPuzzleCell.swift; sourceTree = "<group>"; };
 		D7A88B17220327BE000A9BCC /* timeburnernormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnernormal.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +93,6 @@
 		D72D6BCB2200C58200755600 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D76B45B822132260001A999F /* myPuzzleCell.swift */,
 				D76B45992211F75F001A999F /* myCell.swift */,
 				D729C3992205DF4200A0D3C0 /* ViewController.swift */,
 				D7379C9322036CE000813362 /* ImageEditorView.swift */,
@@ -194,7 +191,6 @@
 				D729C39C2205ECF100A0D3C0 /* CustomButton.swift in Sources */,
 				D7379C9422036CE100813362 /* ImageEditorView.swift in Sources */,
 				D72D6BB82200C41400755600 /* AppDelegate.swift in Sources */,
-				D76B45B922132260001A999F /* myPuzzleCell.swift in Sources */,
 				D76B459A2211F75F001A999F /* myCell.swift in Sources */,
 				D7379C9622036EB200813362 /* PlayfieldView.swift in Sources */,
 			);

@@ -465,13 +465,15 @@ swipe out of the grid to undo</string>
                                         </constraints>
                                         <size key="customSize" width="50" height="50"/>
                                         <connections>
-                                            <outlet property="myImageView" destination="Wh9-z1-Pfp" id="bix-fr-0y5"/>
+                                            <outlet property="myImageView" destination="Wh9-z1-Pfp" id="GcN-KS-ndL"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="bKF-eC-xzK" id="g4r-wy-IOn"/>
                                     <outlet property="delegate" destination="bKF-eC-xzK" id="964-G5-5N3"/>
+                                    <outlet property="dragDelegate" destination="bKF-eC-xzK" id="bnk-4Z-gdT"/>
+                                    <outlet property="dropDelegate" destination="bKF-eC-xzK" id="B2I-8a-kER"/>
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ubj-J8-8RW" userLabel="Collection View2">
@@ -488,7 +490,7 @@ swipe out of the grid to undo</string>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="puzzleCell" id="M8O-Or-3M0" customClass="myPuzzleCell" customModule="Gridy" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="M8O-Or-3M0" customClass="myCell" customModule="Gridy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="82" height="82"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -508,10 +510,16 @@ swipe out of the grid to undo</string>
                                             <constraint firstAttribute="trailing" secondItem="1Ld-nd-7Sb" secondAttribute="trailing" id="p5h-7I-yBY"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="myPuzzleCellImage" destination="1Ld-nd-7Sb" id="tJB-Rp-aLG"/>
+                                            <outlet property="myImageView" destination="1Ld-nd-7Sb" id="P0J-Uj-Dgt"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="bKF-eC-xzK" id="Sxh-Dg-HBT"/>
+                                    <outlet property="delegate" destination="bKF-eC-xzK" id="xoK-Gh-9Nk"/>
+                                    <outlet property="dragDelegate" destination="bKF-eC-xzK" id="eXq-eB-UbM"/>
+                                    <outlet property="dropDelegate" destination="bKF-eC-xzK" id="9Ot-QZ-qIh"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

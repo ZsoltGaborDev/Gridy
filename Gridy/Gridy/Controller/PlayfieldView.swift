@@ -26,7 +26,7 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
     var collectionTwo = [UIImage]()
     var fixedImages = [UIImage].init()
     let frame = UIView()
-    var moves: Int = 0
+    var moves: Int = -16
     
     
 //    func setup() {
@@ -70,11 +70,10 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
                     print("right place!")
                     cell.myImageView.isHidden = false
                     moves += 1
-                }else {
+                } else {
                     print("wrong place!")
                     cell.myImageView.isHidden = false
-                    moves += 1
-                    
+                    moves += 1     
                 }
                 cell.layer.borderColor = UIColor(red: 243/255, green: 233/255, blue: 210/255, alpha: 1).cgColor
                 cell.layer.borderWidth = 1
@@ -106,23 +105,7 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
     }
     // MARK: - UICollectionViewDropDelegate METHODS
     func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
-        if collectionView === self.collectionView1{
-            if collectionView.hasActiveDrag{
-                return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
-            } else {
-                return UICollectionViewDropProposal(operation: .forbidden)
-            }
-        } else if collectionView == self.collectionView2 {
-            if collectionView.hasActiveDrag {
-                return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
-            } else {
-                return UICollectionViewDropProposal(operation: .copy, intent: .insertAtDestinationIndexPath)
-            }
-        } else if destinationIndexPath?.isEmpty ?? true {
-            return UICollectionViewDropProposal(operation: .cancel, intent: .insertAtDestinationIndexPath)
-        } else {
-            return UICollectionViewDropProposal(operation: .forbidden)
-        }
+            return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
     }
     //setup the drop proposals ... (the cancel proposal is never active, i wanted to call it when the image is draged and dropped out from any collectionview, and the desired result : image should be reloaded always in the 1st collectionview)
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator)
@@ -134,7 +117,7 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
         }
         else
         {
-            // Get last index path of table view.
+            // Get last index path of collection view.
             let section = collectionView.numberOfSections - 1
             let row = collectionView.numberOfItems(inSection: section)
             destinationIndexPath = IndexPath(row: row, section: section)
@@ -145,11 +128,6 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
         case .move:
             reorderItems(coordinator: coordinator, destinationIndexPath: destinationIndexPath, collectionView: collectionView)
             print("moving!")
-            scoreLabel.text = "\(setupScore(moves: moves))"
-            break
-        case .copy:
-            copyItems(coordinator: coordinator, destinationIndexPath: destinationIndexPath, collectionView: collectionView)
-            print("copying!")
             scoreLabel.text = "\(setupScore(moves: moves))"
             break
         case .cancel:
@@ -171,78 +149,60 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
     private func reorderItems(coordinator: UICollectionViewDropCoordinator, destinationIndexPath: IndexPath, collectionView: UICollectionView)
     {
         let items = coordinator.items
-        if items.count == 1, let item = items.first, let sourceIndexPath = item.sourceIndexPath
-        {
-            var dIndexPath = destinationIndexPath
-            if dIndexPath.row >= collectionView.numberOfItems(inSection: 0)
-            {
-                dIndexPath.row = collectionView.numberOfItems(inSection: 0) + 1
-            } else if dIndexPath.row >= collectionView.numberOfItems(inSection: 1) {
-                dIndexPath.row = collectionView.numberOfItems(inSection: 0) - 1
-            }
+        if items.count == 1, let item = items.first, let sourceIndexPath = item.sourceIndexPath {
             collectionView.performBatchUpdates({
                 if collectionView === self.collectionView2 {
-                    self.collectionTwo.remove(at: sourceIndexPath.row)
-                    self.collectionTwo.insert(item.dragItem.localObject as! UIImage, at: dIndexPath.row)
+                    if collectionView1.hasActiveDrop && (item.dragItem.localObject as! UIImage) != fixedImages.first {
+                        print("doing 1")
+                        self.collectionTwo.remove(at: sourceIndexPath.row)
+                        self.collectionTwo.insert(fixedImages.first!, at: sourceIndexPath.row)
+                        self.collectionOne.remove(at: destinationIndexPath.row)
+                        self.collectionOne.insert(item.dragItem.localObject as! UIImage, at: destinationIndexPath.row)
+                    } else {
+                        print("doing 2")
+                        self.collectionTwo.remove(at: sourceIndexPath.row)
+                        self.collectionTwo.insert(item.dragItem.localObject as! UIImage, at: destinationIndexPath.row)
+                    }
                 } else {
-                    self.collectionOne.remove(at: sourceIndexPath.row)
-                    self.collectionOne.insert(item.dragItem.localObject as! UIImage, at: dIndexPath.row)
+                    if collectionView2.hasActiveDrop && (item.dragItem.localObject as! UIImage) != fixedImages.first {
+                        print("doing 3")
+                        self.collectionOne.remove(at: sourceIndexPath.row)
+                        self.collectionOne.insert(fixedImages.first!, at: sourceIndexPath.row)
+                        self.collectionTwo.remove(at: destinationIndexPath.row)
+                        self.collectionTwo.insert(item.dragItem.localObject as! UIImage, at: destinationIndexPath.row)
+                    } else {
+                        print("doing 4")
+                        self.collectionOne.remove(at: sourceIndexPath.row)
+                        self.collectionOne.insert(item.dragItem.localObject as! UIImage, at: destinationIndexPath.row)
+                    }
                 }
                 collectionView.deleteItems(at: [sourceIndexPath])
-                collectionView.insertItems(at: [dIndexPath])
+                collectionView.insertItems(at: [destinationIndexPath])
             })
-            coordinator.drop(items.first!.dragItem, toItemAt: dIndexPath)
+            coordinator.drop(items.first!.dragItem, toItemAt: destinationIndexPath)
         }
     }
-    /// This method copies a cell from source indexPath in 1st collection view to destination indexPath in 2nd collection view. It works for multiple items.
-    ///
-    /// - Parameters:
-    ///   - coordinator: coordinator obtained from performDropWith: UICollectionViewDropDelegate method
-    ///   - destinationIndexPath: indexpath of the collection view where the user drops the element
-    ///   - collectionView: collectionView in which reordering needs to be done.
-    private func copyItems(coordinator: UICollectionViewDropCoordinator, destinationIndexPath: IndexPath, collectionView: UICollectionView)
-    {
-        collectionView.performBatchUpdates({
-            var indexPaths = [IndexPath]()
-            for (index, item) in coordinator.items.enumerated() {
-                let indexPath = IndexPath(row: destinationIndexPath.row + index, section: destinationIndexPath.section)
-                if collectionView === collectionView2 {
-                    self.collectionTwo.insert(item.dragItem.localObject as! UIImage, at: indexPath.row)
-                    collectionView1.cellForItem(at: indexPath)?.isHidden = true
-                } else {
-                    self.collectionOne.insert(item.dragItem.localObject as! UIImage, at: indexPath.row)
-                }
-                indexPaths.append(indexPath)
-            }
-            collectionView.insertItems(at: indexPaths)
-        })
-    }
+    
     func setupScore(moves:Int) -> Int {
         var score: Int = 0
         score += moves
         return score
     }
-    // the following code it's never used, becuase i don't know how to setup the condition to activate it in "dropSessionDidUpdate" function. This should redo visible the hidden image in 1st collectionwiew as soon the same image is draged out from grid from teh second collectionview. (resumed: as soon canceled the image from 2nd collectionview, has to be reloaded in the 1st one...)
-    private func cancelItems(coordinator: UICollectionViewDropCoordinator, destinationIndexPath: IndexPath, collectionView: UICollectionView)
-    {
+    // the following code it's never used, becuase I don't know how to setup the condition to activate it in "dropSessionDidUpdate" function. This should be the "swipe out of the grid to undo"
+    private func cancelItems(coordinator: UICollectionViewDropCoordinator, destinationIndexPath: IndexPath, collectionView: UICollectionView) {
         let items = coordinator.items
         if items.count == 1, let item = items.first, let sourceIndexPath = item.sourceIndexPath
         {
             collectionView.performBatchUpdates({
-                if collectionView === self.collectionView2 {
+                if collectionView != self.collectionView1 && collectionView != collectionView2 && collectionView2.hasActiveDrag {
                     self.collectionTwo.remove(at: sourceIndexPath.row)
+                    self.collectionTwo.insert(fixedImages.first!, at: sourceIndexPath.row)
+                    self.collectionOne.insert(item.dragItem.localObject as! UIImage, at: 0)
                 }
-                collectionView.deleteItems(at: [sourceIndexPath])
-                collectionView1.cellForItem(at: sourceIndexPath)?.isHidden = false
+                collectionView2.deleteItems(at: [sourceIndexPath])
+                collectionView1.insertItems(at: [destinationIndexPath])
             })
         }        
-    }
-    //block from drag the last 2 cells from 1st collectionview
-    func collectionView(_ collectionView: UICollectionView, targetIndexPathForMoveFromItemAt originalIndexPath: IndexPath, toProposedIndexPath proposedIndexPath: IndexPath) -> IndexPath {
-        if proposedIndexPath.row == collectionOne.count - 2 ||   proposedIndexPath.row == collectionOne.count - 1{
-            return IndexPath(row: 1, section: 0)
-        }
-        return proposedIndexPath
     }
     // create the fixed images for the 2 blocked cells of collectionview1
     func collectFixedImageSet() {

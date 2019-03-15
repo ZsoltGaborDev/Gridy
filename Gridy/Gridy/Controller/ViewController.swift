@@ -39,7 +39,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     override func viewDidLoad() {
         super.viewDidLoad()
         collectLocalImageSet()
-        // Do any additional setup after loading the view.
     }
     func displayCamera() {
         let sourceType = UIImagePickerController.SourceType.camera
@@ -138,7 +137,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     func collectLocalImageSet() {
         localImages.removeAll()
-        let imageNames = ["City", "Fawn", "Island", "Lake", "Mountain", "Rabbit", "Wood"]
+        let imageNames = ["Fawn", "Island", "Lake", "Mountain", "Rabbit", "Wood"]
         for name in imageNames {
             if let image = UIImage.init(named: name) {
                 localImages.append(image)

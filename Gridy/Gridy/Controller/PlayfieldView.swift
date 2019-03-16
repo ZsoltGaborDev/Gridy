@@ -27,13 +27,7 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
     var fixedImages = [UIImage].init()
     let frame = UIView()
     var moves: Int = -16
-    
-    
-//    func setup() {
-//        let puzzleImageWidth = (puzzleContainerView.frame.size.width - 30) / 4
-//        let puzzleImageLayout = puzzleImage.collectionViewLayout as! UICollectionViewFlowLayout
-//        puzzleImageLayout.itemSize = CGSize(width: puzzleImageWidth, height: puzzleImageWidth)
-//    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionOne = toReceive
@@ -47,7 +41,6 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
         //return collectionView == self.collectionView1 ? collectionOne.count : collectionTwo.count
         // we need 2 extra cells in teh 1st collectionview, one blank and one with the eye that will activate one popup for 2 - 3 second with the whole puzzle image
         return collectionView == self.collectionView1 ? 18 : 16
-        
     }
     //populate views
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -55,14 +48,15 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
             if collectionView == collectionView1 {
                 collectionOne.append(contentsOf: fixedImages)
                 cell.myImageView.image = collectionOne[indexPath.item]
-                cell.layer.borderColor = UIColor(red: 243/255, green: 233/255, blue: 210/255, alpha: 1).cgColor
-                cell.layer.borderWidth = 1
+                if (cell.myImageView.image != fixedImages.first!) && (cell.myImageView.image != fixedImages.last) {
+                    cell.layer.borderColor = UIColor(red: 243/255, green: 233/255, blue: 210/255, alpha: 1).cgColor
+                    cell.layer.borderWidth = 1
+                }
                 cell.backgroundColor = .white
                 let imageWidth = collectionView1.frame.size.width / 7
                 let imageLayout = collectionView1.collectionViewLayout as! UICollectionViewFlowLayout
                 imageLayout.itemSize = CGSize(width: imageWidth, height: imageWidth)
             } else {
-                // check if the image is dropped in the correct place or not. To make the bonus request, here we could extract the correct and wrong moves separately and report a different, alternative scoring algorithm.
                 let blank = fixedImages.first
                 collectionTwo.append(blank!) // blank image need for the whole CV
                 cell.myImageView.image = collectionTwo[indexPath.item]
@@ -97,32 +91,22 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
         dragItem.localObject = item
         return [dragItem]
     }
-    func collectionView(_ collectionView: UICollectionView, canHandle
-        session: UIDropSession) -> Bool {
-        
-        return session.hasItemsConforming(toTypeIdentifiers:
-            [kUTTypeImage as String])
-    }
     // MARK: - UICollectionViewDropDelegate METHODS
     func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
             return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
     }
-    //setup the drop proposals ... (the cancel proposal is never active, i wanted to call it when the image is draged and dropped out from any collectionview, and the desired result : image should be reloaded always in the 1st collectionview)
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator)
     {
         let destinationIndexPath: IndexPath
         if let indexPath = coordinator.destinationIndexPath
         {
             destinationIndexPath = indexPath
-        }
-        else
-        {
+        } else {
             // Get last index path of collection view.
             let section = collectionView.numberOfSections - 1
             let row = collectionView.numberOfItems(inSection: section)
             destinationIndexPath = IndexPath(row: row, section: section)
         }
-
         switch coordinator.proposal.operation
         {
         case .move:
@@ -182,7 +166,6 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
             coordinator.drop(items.first!.dragItem, toItemAt: destinationIndexPath)
         }
     }
-    
     func setupScore(moves:Int) -> Int {
         var score: Int = 0
         score += moves

@@ -197,5 +197,12 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
             }
         }
     }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        collectionView1.collectionViewLayout.invalidateLayout()
+        collectionView2.collectionViewLayout.invalidateLayout()
+        
+        
+    }
 }
 

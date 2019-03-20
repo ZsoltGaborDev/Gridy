@@ -19,6 +19,7 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
     @IBAction func newGameAction(_ sender: Any) {
     
     }
+    @IBOutlet weak var cvContainer: UIView!
     @IBOutlet weak var scoreLabel: UILabel!
     
     var toReceive = [UIImage]()
@@ -53,7 +54,8 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
                     cell.layer.borderWidth = 1
                 }
                 cell.backgroundColor = .white
-                let imageWidth = collectionView1.frame.size.width / 7
+                let cv1Width = (cvContainer.frame.height / 2 ) - 41
+                let imageWidth = cv1Width / 5
                 let imageLayout = collectionView1.collectionViewLayout as! UICollectionViewFlowLayout
                 imageLayout.itemSize = CGSize(width: imageWidth, height: imageWidth)
             } else {
@@ -62,17 +64,16 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
                 cell.myImageView.image = collectionTwo[indexPath.item]
                 if collectionTwo[indexPath.item] === toReceive[indexPath.item] {
                     print("right place!")
-                    cell.myImageView.isHidden = false
                     moves += 1
                 } else {
                     print("wrong place!")
-                    cell.myImageView.isHidden = false
                     moves += 1     
                 }
                 cell.layer.borderColor = UIColor(red: 243/255, green: 233/255, blue: 210/255, alpha: 1).cgColor
                 cell.layer.borderWidth = 1
                 cell.backgroundColor = .white
-                let imageWidth = collectionView2.frame.size.width / 4
+                let cv2Width = cvContainer.frame.height / 2
+                let imageWidth = cv2Width / 3.4
                 let imageLayout = collectionView2.collectionViewLayout as! UICollectionViewFlowLayout
                 imageLayout.itemSize = CGSize(width: imageWidth, height: imageWidth)
             }
@@ -196,13 +197,6 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
                 fixedImages.append(image)
             }
         }
-    }
-    
-    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-        collectionView1.collectionViewLayout.invalidateLayout()
-        collectionView2.collectionViewLayout.invalidateLayout()
-        
-        
     }
 }
 

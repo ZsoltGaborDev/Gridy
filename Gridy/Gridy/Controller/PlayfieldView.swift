@@ -19,7 +19,6 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
     @IBAction func newGameAction(_ sender: Any) {
     
     }
-    @IBOutlet weak var cvContainer: UIView!
     @IBOutlet weak var scoreLabel: UILabel!
     
     var toReceive = [UIImage]()
@@ -54,8 +53,8 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
                     cell.layer.borderWidth = 1
                 }
                 cell.backgroundColor = .white
-                let cv1Width = (cvContainer.frame.height / 2 ) - 41
-                let imageWidth = cv1Width / 5
+                //let cv1Width = view.frame.width
+                let imageWidth = collectionView1.frame.width / 7
                 let imageLayout = collectionView1.collectionViewLayout as! UICollectionViewFlowLayout
                 imageLayout.itemSize = CGSize(width: imageWidth, height: imageWidth)
             } else {
@@ -72,8 +71,7 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
                 cell.layer.borderColor = UIColor(red: 243/255, green: 233/255, blue: 210/255, alpha: 1).cgColor
                 cell.layer.borderWidth = 1
                 cell.backgroundColor = .white
-                let cv2Width = cvContainer.frame.height / 2
-                let imageWidth = cv2Width / 3.4
+                let imageWidth = collectionView2.frame.width / 4.3  
                 let imageLayout = collectionView2.collectionViewLayout as! UICollectionViewFlowLayout
                 imageLayout.itemSize = CGSize(width: imageWidth, height: imageWidth)
             }

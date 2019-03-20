@@ -95,8 +95,8 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
         return true
     }
     func composeCreationImage() {
-        UIGraphicsBeginImageContextWithOptions(creationFrame.bounds.size, false, 0)
-        creationFrame.drawHierarchy(in: creationFrame.bounds, afterScreenUpdates: true)
+        UIGraphicsBeginImageContextWithOptions(creationImageView.bounds.size, false, 0)
+        creationImageView.drawHierarchy(in: creationImageView.bounds, afterScreenUpdates: true)
         screenshot = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
     }

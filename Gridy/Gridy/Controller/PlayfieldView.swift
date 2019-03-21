@@ -27,6 +27,7 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
     var fixedImages = [UIImage].init()
     let frame = UIView()
     var moves: Int = -16
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,10 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
         collectFixedImageSet()
         collectionView1.dragInteractionEnabled = true
         collectionView2.dragInteractionEnabled = true
+        
+        
+        
+        
     }
     //number of views
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -54,7 +59,7 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
                 }
                 cell.backgroundColor = .white
                 //let cv1Width = view.frame.width
-                let imageWidth = collectionView1.frame.width / 7
+                let imageWidth = collectionView1.frame.width / 6.7
                 let imageLayout = collectionView1.collectionViewLayout as! UICollectionViewFlowLayout
                 imageLayout.itemSize = CGSize(width: imageWidth, height: imageWidth)
             } else {
@@ -71,7 +76,7 @@ class PlayfieldView: UIViewController, UICollectionViewDelegate, UICollectionVie
                 cell.layer.borderColor = UIColor(red: 243/255, green: 233/255, blue: 210/255, alpha: 1).cgColor
                 cell.layer.borderWidth = 1
                 cell.backgroundColor = .white
-                let imageWidth = collectionView2.frame.width / 4.3  
+                let imageWidth = collectionView2.frame.width / 4
                 let imageLayout = collectionView2.collectionViewLayout as! UICollectionViewFlowLayout
                 imageLayout.itemSize = CGSize(width: imageWidth, height: imageWidth)
             }

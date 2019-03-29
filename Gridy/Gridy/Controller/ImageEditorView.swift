@@ -95,8 +95,8 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
         return true
     }
     func composeCreationImage() {
-        UIGraphicsBeginImageContextWithOptions(creationImageView.bounds.size, false, 0)
-        creationImageView.drawHierarchy(in: creationImageView.bounds, afterScreenUpdates: true)
+        UIGraphicsBeginImageContextWithOptions(creationFrame.bounds.size, false, 0)
+        creationImageView.drawHierarchy(in: creationFrame.bounds, afterScreenUpdates: true)
         screenshot = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
     }
@@ -156,6 +156,7 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
         if segue.identifier == "my2ndSegue" {
             let vc2 = segue.destination as! PlayfieldView
             vc2.toReceive = toSend
+            vc2.popUpImage = self.screenshot
         }
     }
 }

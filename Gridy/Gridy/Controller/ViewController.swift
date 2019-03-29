@@ -58,6 +58,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 self.presentImagePicker(sourceType: sourceType)
             case .denied, .restricted:
                 self.troubleAlert(message: noPermissionMessage)
+            @unknown default:
+                fatalError(noPermissionMessage)
             }
         }
         else {
@@ -83,6 +85,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 self.presentImagePicker(sourceType: sourceType)
             case .denied, .restricted:
                 self.troubleAlert(message: noPermissionStatusMessage)
+            @unknown default:
+                self.presentImagePicker(sourceType: sourceType)
+           
             }
         }
         else {

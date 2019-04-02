@@ -12,8 +12,9 @@ extension PlayfieldView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     //MARK: - Number Of Items In Section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionView == self.collectionView1 ? collectionOne.count : toReceive.count
+        return collectionView == self.collectionView1 ? collectionOne.count : collectionTwo.count
     }
+
     
     //MARK: - Cell For Item At
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -31,11 +32,11 @@ extension PlayfieldView: UICollectionViewDelegate, UICollectionViewDataSource {
             layout.itemSize = CGSize(width: width, height: width)
         // COLLECTION VIEW 2
         } else {
-            if cell.myImageView.image == nil {
-                cell.myImageView.image = fixedImages.first!
+            if cell.myImageView.image == fixedImages.first! {
+                cell.myImageView.image = collectionTwo[indexPath.item]
             } else {
-                cell.myImageView.image = collectionTwo?[indexPath.item]
-                if collectionTwo?[indexPath.item] === toReceive[indexPath.item] {
+                cell.myImageView.image = collectionTwo[indexPath.item]
+                if collectionTwo[indexPath.item] === toReceive[indexPath.item] {
                     print("right place!")
                     moves += 1
                 } else {

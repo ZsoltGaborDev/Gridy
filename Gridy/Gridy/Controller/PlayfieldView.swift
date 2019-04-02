@@ -7,9 +7,9 @@
 //
 
 import UIKit
-//import Foundation
-//import Photos
-//import MobileCoreServices
+import Foundation
+import Photos
+import MobileCoreServices
 
 class PlayfieldView: UIViewController {
     
@@ -21,8 +21,8 @@ class PlayfieldView: UIViewController {
     
     //MARK: - Variables
     var toReceive = [UIImage]()
-    var collectionOne : [UIImage]!
-    var collectionTwo : [UIImage]?
+    var collectionOne = [UIImage]()
+    var collectionTwo = [UIImage]()
     var fixedImages = [UIImage(named: "Blank"), UIImage(named: "Gridy-lookup")]
     let frame = UIView()
     var moves: Int = 0
@@ -32,9 +32,9 @@ class PlayfieldView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionOne = toReceive
+        collectionOne.shuffle()
         popUpView.image = popUpImage
         popUpView.isHidden = true
-        collectionOne.shuffle()
         for image in fixedImages {
             if let image = image {
                 collectionOne.append(image)
@@ -43,7 +43,8 @@ class PlayfieldView: UIViewController {
             }
         }
         collectionView1.dragInteractionEnabled = true
-        if collectionTwo == nil || collectionTwo?.count == 0 {
+        collectionView2.dragInteractionEnabled = true
+        if collectionTwo == nil || collectionTwo.count == 0 {
             if let blank = UIImage(named: "Blank") {
                 var temp = [UIImage]()
                 for _ in toReceive {

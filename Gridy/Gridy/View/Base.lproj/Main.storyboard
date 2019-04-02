@@ -1603,7 +1603,7 @@ swipe out of the grid to undo</string>
                                                 </imageView>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.9514457583" green="0.91356188059999999" blue="0.82384783029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.53485649820000003" green="0.83075767759999997" blue="0.59683889150000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="1Ld-nd-7Sb" firstAttribute="leading" secondItem="M8O-Or-3M0" secondAttribute="leading" id="BXF-VD-ddX"/>
                                             <constraint firstAttribute="bottom" secondItem="1Ld-nd-7Sb" secondAttribute="bottom" id="GEd-16-At9"/>

@@ -13,14 +13,14 @@ extension PlayfieldView: UICollectionViewDragDelegate, UICollectionViewDropDeleg
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
 
         let item: UIImage
-        let image = collectionOne[indexPath.item]
-        if fixedImages.contains(image) {
+        let image = CVOneImages[indexPath.item]
+        if (image == fixedImages.last) || (image == fixedImages.first) {
             return []
         }
-        if collectionView == collectionView1 {
+        if collectionView == CVOne {
             item = image
         } else {
-            item = (self.collectionTwo[indexPath.row])
+            item = (self.CVTwoImages[indexPath.row])
         }
         let itemProvider = NSItemProvider(object: item as UIImage)
         let dragItem = UIDragItem(itemProvider: itemProvider)
@@ -30,8 +30,8 @@ extension PlayfieldView: UICollectionViewDragDelegate, UICollectionViewDropDeleg
     func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
         
         // Use this to visually clean up and check collection view 2 for right drop path
-        if collectionView === collectionView1 || collectionView === collectionView2 {
-            return UICollectionViewDropProposal(operation: .copy, intent: .insertAtDestinationIndexPath)
+        if collectionView === CVOne || collectionView === CVTwo {
+            return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
         } else {
             return UICollectionViewDropProposal(operation: .forbidden)
         }
@@ -47,23 +47,20 @@ extension PlayfieldView: UICollectionViewDragDelegate, UICollectionViewDropDeleg
             dip = IndexPath(row: row, section: section)
         }
         switch coordinator.proposal.operation {
-//        case .move:
-//            reorderItems(coordinator: coordinator, destinationIndexPath: dip, collectionView: collectionView)
-//            print("moving!")
+        case .move:
+            reorderItems(coordinator: coordinator, destinationIndexPath: dip, collectionView: collectionView)
+            print("moving!")
         case .cancel:
             return
         //            cancelItems(coordinator: coordinator, destinationIndexProvider: dip, collectionView: collectionView)
-        case .copy:
-            copyItems(coordinator: coordinator, destinationIndexPath: dip, collectionView: collectionView)
-            print("copying")
         default:
             return
         }
     }
 
-    private func copyItems(coordinator: UICollectionViewDropCoordinator, destinationIndexPath: IndexPath, collectionView: UICollectionView) {
-        if collectionView == collectionView1 {
-            if collectionView1.hasActiveDrag {
+    private func reorderItems(coordinator: UICollectionViewDropCoordinator, destinationIndexPath: IndexPath, collectionView: UICollectionView) {
+        if collectionView == CVOne {
+            if CVOne.hasActiveDrag  {
                 let items = coordinator.items
                 if items.count == 1, let item = items.first, let sourceIndexPath = item.sourceIndexPath {
                     var dIndexPath = destinationIndexPath
@@ -72,9 +69,9 @@ extension PlayfieldView: UICollectionViewDragDelegate, UICollectionViewDropDeleg
                         dIndexPath.row = collectionView.numberOfItems(inSection: 0) - 1
                     }
                     collectionView.performBatchUpdates({
-                        self.collectionOne.remove(at: sourceIndexPath.row)
+                        self.CVOneImages.remove(at: sourceIndexPath.row)
                         print(sourceIndexPath.row)
-                        self.collectionOne.insert(item.dragItem.localObject as! UIImage, at: dIndexPath.row)
+                        self.CVOneImages.insert(item.dragItem.localObject as! UIImage, at: dIndexPath.row)
                         print(dIndexPath.row)
                         collectionView.deleteItems(at: [sourceIndexPath])
                         print(sourceIndexPath)
@@ -84,56 +81,57 @@ extension PlayfieldView: UICollectionViewDragDelegate, UICollectionViewDropDeleg
                     coordinator.drop(item.dragItem, toItemAt: dIndexPath)
                     print("doing 1")
                 }
-            } else {
-                let items = coordinator.items
-                let dIndexPath = destinationIndexPath
-                collectionView.performBatchUpdates({
-                    self.collectionOne.insert(items.first!.dragItem.localObject as! UIImage, at: dIndexPath.row)
-                    self.collectionTwo.remove(at: dIndexPath.row)
-                    collectionView1.insertItems(at: [dIndexPath])
-                    collectionView2.deleteItems(at: [dIndexPath])
-                    print(dIndexPath)
-                })
-                coordinator.drop(items.first!.dragItem, toItemAt: dIndexPath)
-                print("doing 2")
             }
+//            } else {
+//                let items = coordinator.items
+//                let dIndexPath = destinationIndexPath
+//                collectionView.performBatchUpdates({
+//                    self.CVOneImages.insert(items.first!.dragItem.localObject as! UIImage, at: dIndexPath.row)
+//                    self.CVTwoImages.remove(at: dIndexPath.row)
+//                    CVOne.insertItems(at: [dIndexPath])
+//                    CVTwo.deleteItems(at: [dIndexPath])
+//                    print(dIndexPath)
+//                })
+//                coordinator.drop(items.first!.dragItem, toItemAt: dIndexPath)
+//                print("doing 2")
+//            }
         } else {
-            if collectionView == collectionView2 {
-                if collectionView2.hasActiveDrag {
-                    let items = coordinator.items
-                    if items.count == 1, let item = items.first, let sourceIndexPath = item.sourceIndexPath
-                    {
-                        var dIndexPath = destinationIndexPath
-                        if dIndexPath.row >= collectionView.numberOfItems(inSection: 0)
-                        {
-                            dIndexPath.row = collectionView.numberOfItems(inSection: 0) - 1
-                        }
+            if collectionView == CVTwo {
+//                if CVTwo.hasActiveDrag {
+//                    let items = coordinator.items
+//                    if items.count == 1, let item = items.first, let sourceIndexPath = item.sourceIndexPath
+//                    {
+//                        var dIndexPath = destinationIndexPath
+//                        if dIndexPath.row >= collectionView.numberOfItems(inSection: 0)
+//                        {
+//                            dIndexPath.row = collectionView.numberOfItems(inSection: 0) - 1
+//                        }
+//                        collectionView.performBatchUpdates({
+//                            self.CVTwoImages.remove(at: sourceIndexPath.row)
+//                            print(sourceIndexPath.row)
+//                            self.CVTwoImages.insert(item.dragItem.localObject as! UIImage, at: dIndexPath.row)
+//                            print(dIndexPath.row)
+//                            collectionView.deleteItems(at: [sourceIndexPath])
+//                            print(sourceIndexPath)
+//                            collectionView.insertItems(at: [dIndexPath])
+//                            print(dIndexPath)
+//                        })
+//                        coordinator.drop(item.dragItem, toItemAt: dIndexPath)
+//                        print("doing 3")
+//                    }
+//                } else {
+                        let items = coordinator.items
+                        let dIndexPath = destinationIndexPath
                         collectionView.performBatchUpdates({
-                            self.collectionTwo.remove(at: sourceIndexPath.row)
-                            print(sourceIndexPath.row)
-                            self.collectionTwo.insert(item.dragItem.localObject as! UIImage, at: dIndexPath.row)
-                            print(dIndexPath.row)
-                            collectionView.deleteItems(at: [sourceIndexPath])
-                            print(sourceIndexPath)
-                            collectionView.insertItems(at: [dIndexPath])
+                            self.CVTwoImages.insert(items.first!.dragItem.localObject as! UIImage, at: dIndexPath.row)
+                            //self.CVOneImages.remove(at: dIndexPath.row)
+                            CVTwo.insertItems(at: [dIndexPath])
+                            //CVOne.deleteItems(at: [dIndexPath])
                             print(dIndexPath)
                         })
-                        coordinator.drop(item.dragItem, toItemAt: dIndexPath)
-                        print("doing 3")
-                    }
-                } else {
-                    let items = coordinator.items
-                    let dIndexPath = destinationIndexPath
-                    collectionView.performBatchUpdates({
-                        self.collectionTwo.insert(items.first!.dragItem.localObject as! UIImage, at: dIndexPath.row)
-                        self.collectionOne.remove(at: dIndexPath.row)
-                        collectionView2.insertItems(at: [dIndexPath])
-                        collectionView1.deleteItems(at: [dIndexPath])
-                        print(dIndexPath)
-                    })
-                    coordinator.drop(items.first!.dragItem, toItemAt: dIndexPath)
-                    print("doing 4")
-                }
+                        coordinator.drop(items.first!.dragItem, toItemAt: dIndexPath)
+                        print("doing 4")
+//                }
             }
         }
     }

@@ -10,7 +10,7 @@ import UIKit
 
 class myCell: UICollectionViewCell {
 
-    @IBOutlet weak var myImageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func prepareForReuse() {
         super.prepareForReuse()

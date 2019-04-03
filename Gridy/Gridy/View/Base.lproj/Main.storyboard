@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -34,7 +34,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo Library" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lui-Zc-1OL">
-                                        <rect key="frame" x="9.6666666666666572" y="53" width="91" height="18"/>
+                                        <rect key="frame" x="9.5" y="53" width="91" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="6Oi-dB-z5K"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="91" id="8ZQ-DC-rMu"/>
@@ -164,7 +164,7 @@
                                 </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-- OR load your own --" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZb-dS-Jl8">
-                                <rect key="frame" x="115.33333333333333" y="578" width="183.33333333333337" height="20"/>
+                                <rect key="frame" x="115.5" y="578" width="183" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="41z-m2-NnA"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="BQH-Xo-r8w"/>
@@ -238,7 +238,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZh-MV-G3R">
-                                        <rect key="frame" x="41.666666666666657" y="53" width="29" height="18"/>
+                                        <rect key="frame" x="41.5" y="53" width="29" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="0CM-Ij-yQx"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="29" id="8HK-5P-NJl"/>
@@ -381,7 +381,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKV-9h-X5w">
-                                        <rect key="frame" x="28.666666666666671" y="53" width="53" height="18"/>
+                                        <rect key="frame" x="28.5" y="53" width="53" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="cFH-0X-NbL"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="53" id="f8a-Il-fA2"/>
@@ -915,7 +915,7 @@
                                 </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02C-hD-VhD">
-                                <rect key="frame" x="122" y="241.66666666666663" width="170" height="45"/>
+                                <rect key="frame" x="122" y="241.5" width="170" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="4lL-rb-PM2"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="L3T-Lq-FF8"/>
@@ -1362,7 +1362,7 @@ zoom, rotate, reposition.</string>
                                 </variation>
                             </view>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zq4-tl-vIr">
-                                <rect key="frame" x="57" y="203.33333333333337" width="300" height="153"/>
+                                <rect key="frame" x="57" y="203.5" width="300" height="153"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="DO8-5e-jyB">
@@ -1410,7 +1410,7 @@ zoom, rotate, reposition.</string>
                                             <constraint firstItem="Wh9-z1-Pfp" firstAttribute="top" secondItem="e7O-tH-zuG" secondAttribute="top" id="x7w-X7-uXa"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="myImageView" destination="Wh9-z1-Pfp" id="GcN-KS-ndL"/>
+                                            <outlet property="imageView" destination="Wh9-z1-Pfp" id="GcN-KS-ndL"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -1466,7 +1466,7 @@ zoom, rotate, reposition.</string>
                                 </connections>
                             </collectionView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RbP-rI-Qu4" userLabel="ConstraintsViewCV1">
-                                <rect key="frame" x="0.0" y="0.0" width="65" height="356.33333333333331"/>
+                                <rect key="frame" x="0.0" y="0.0" width="65" height="356.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="Fee-G7-dnF"/>
@@ -1483,7 +1483,7 @@ zoom, rotate, reposition.</string>
                                 </variation>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lAB-xD-yqL" userLabel="ConstraintsViewCV2">
-                                <rect key="frame" x="0.0" y="356.33333333333326" width="65" height="508"/>
+                                <rect key="frame" x="0.0" y="356.5" width="65" height="508"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="21Z-Kv-97H"/>
@@ -1500,7 +1500,7 @@ zoom, rotate, reposition.</string>
                                 </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MtF-tk-jrX" userLabel="Drag pieces to the grid swipe out of the grid to undo">
-                                <rect key="frame" x="0.0" y="519.66666666666663" width="414" height="37"/>
+                                <rect key="frame" x="0.0" y="520" width="414" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="270" id="2fK-wO-8xB"/>
                                     <constraint firstAttribute="height" constant="60" id="94F-9Z-4qm"/>
@@ -1565,7 +1565,7 @@ swipe out of the grid to undo</string>
                                 </variation>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ubj-J8-8RW" userLabel="Collection View2">
-                                <rect key="frame" x="57" y="564.33333333333337" width="300" height="300"/>
+                                <rect key="frame" x="57" y="564.5" width="300" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="2V3-9V-KTk">
@@ -1611,7 +1611,7 @@ swipe out of the grid to undo</string>
                                             <constraint firstAttribute="trailing" secondItem="1Ld-nd-7Sb" secondAttribute="trailing" id="jlt-lw-ffS"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="myImageView" destination="1Ld-nd-7Sb" id="P0J-Uj-Dgt"/>
+                                            <outlet property="imageView" destination="1Ld-nd-7Sb" id="P0J-Uj-Dgt"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -1751,7 +1751,10 @@ swipe out of the grid to undo</string>
                             </constraint>
                             <constraint firstItem="HM0-MF-Og3" firstAttribute="top" secondItem="Fj4-jo-vWc" secondAttribute="top" constant="10" id="nyw-Wn-LVt"/>
                             <constraint firstItem="RbP-rI-Qu4" firstAttribute="leading" secondItem="Fj4-jo-vWc" secondAttribute="leading" id="omW-z4-J0u"/>
-                            <constraint firstItem="Q6Y-ms-KY9" firstAttribute="centerY" secondItem="vvX-My-aQD" secondAttribute="centerY" constant="90" id="qXg-yU-WEn"/>
+                            <constraint firstItem="Q6Y-ms-KY9" firstAttribute="centerY" secondItem="vvX-My-aQD" secondAttribute="centerY" constant="90" id="qXg-yU-WEn">
+                                <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="Q6Y-ms-KY9" firstAttribute="centerX" secondItem="vvX-My-aQD" secondAttribute="centerX" id="qxi-hz-lfD"/>
                             <constraint firstItem="ubj-J8-8RW" firstAttribute="bottom" secondItem="Fj4-jo-vWc" secondAttribute="bottom" constant="-20" id="sFd-ct-BsI">
                                 <variation key="heightClass=compact-widthClass=regular" constant="-31"/>
@@ -1902,8 +1905,8 @@ swipe out of the grid to undo</string>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="collectionView1" destination="zq4-tl-vIr" id="ZIN-tv-YmV"/>
-                        <outlet property="collectionView2" destination="ubj-J8-8RW" id="Vbr-Ak-YAb"/>
+                        <outlet property="CVOne" destination="zq4-tl-vIr" id="ZIN-tv-YmV"/>
+                        <outlet property="CVTwo" destination="ubj-J8-8RW" id="Vbr-Ak-YAb"/>
                         <outlet property="popUpView" destination="Q6Y-ms-KY9" id="ZBc-73-HxR"/>
                         <outlet property="scoreLabel" destination="Mlq-EZ-azF" id="6Hq-Gc-4Nz"/>
                     </connections>

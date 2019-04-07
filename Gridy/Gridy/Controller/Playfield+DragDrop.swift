@@ -59,6 +59,7 @@ extension PlayfieldView: UICollectionViewDragDelegate, UICollectionViewDropDeleg
     }
 
     private func reorderItems(coordinator: UICollectionViewDropCoordinator, destinationIndexPath: IndexPath, collectionView: UICollectionView) {
+        scoring(moves: moves)
         if collectionView == CVOne {
             if CVOne.hasActiveDrag  {
                 let items = coordinator.items
@@ -123,12 +124,13 @@ extension PlayfieldView: UICollectionViewDragDelegate, UICollectionViewDropDeleg
                         let items = coordinator.items
                         let dIndexPath = destinationIndexPath
                         collectionView.performBatchUpdates({
-                            if items.first!.dragItem.localObject as! UIImage === toReceive[dIndexPath.item] {
+                            let dragItem = items.first!.dragItem.localObject as! UIImage
+                            if dragItem === toReceive[dIndexPath.item] {
                                 print("it works !!!!")
                                 self.CVTwoImages.insert(items.first!.dragItem.localObject as! UIImage, at: dIndexPath.row)
-                                self.CVOneImages.remove(at: dIndexPath.row)
+                                //self.CVOneImages.remove(at: sourceIndexPath.row)
                                 CVTwo.insertItems(at: [dIndexPath])
-                                CVOne.deleteItems(at: [dIndexPath])
+                                //CVOne.deleteItems(at: [sourceIndexPath])
                             }
                             print(dIndexPath)
                         })

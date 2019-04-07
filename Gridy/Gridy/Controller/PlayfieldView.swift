@@ -21,7 +21,7 @@ class PlayfieldView: UIViewController {
     
     //MARK: - Variables
     var toReceive = [UIImage]()
-    var CVOneImages = [UIImage]()
+    var CVOneImages :[UIImage]!
     var CVTwoImages = [UIImage]()
     var fixedImages = [UIImage(named: "Blank"), UIImage(named: "Gridy-lookup")]
     let frame = UIView()
@@ -35,6 +35,7 @@ class PlayfieldView: UIViewController {
         CVOneImages.shuffle()
         popUpView.image = popUpImage
         popUpView.isHidden = true
+        scoring(moves: moves)
         for image in fixedImages {
             if let image = image {
                 CVOneImages.append(image)
@@ -44,7 +45,7 @@ class PlayfieldView: UIViewController {
         }
         CVOne.dragInteractionEnabled = true
         CVTwo.dragInteractionEnabled = false
-        if CVTwoImages == nil || CVTwoImages.count == 0 {
+        if CVTwoImages.count == 0 {
             if let blank = UIImage(named: "Blank") {
                 var temp = [UIImage]()
                 for _ in toReceive {
@@ -56,6 +57,10 @@ class PlayfieldView: UIViewController {
                 fatalError("Could not create second collection view array, this error needs better handled")
             }
         }
+    }
+    func scoring(moves: Int) {
+        self.moves += 1
+        scoreLabel.text = "\(moves)"
     }
     
     //MARK: - IBActions

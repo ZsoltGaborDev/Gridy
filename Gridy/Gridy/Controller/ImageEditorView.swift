@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreImage
 
 class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate {
     

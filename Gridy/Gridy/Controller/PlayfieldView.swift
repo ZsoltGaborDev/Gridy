@@ -57,7 +57,7 @@ class PlayfieldView: UIViewController {
             }
         }
     }
-
+    
     //MARK: - IBActions
     @IBAction func newGameAction(_ sender: Any) { }
 

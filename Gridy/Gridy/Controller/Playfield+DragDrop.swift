@@ -123,10 +123,26 @@ extension PlayfieldView: UICollectionViewDragDelegate, UICollectionViewDropDeleg
                         let items = coordinator.items
                         let dIndexPath = destinationIndexPath
                         collectionView.performBatchUpdates({
-                            self.CVTwoImages.insert(items.first!.dragItem.localObject as! UIImage, at: dIndexPath.row)
-                            //self.CVOneImages.remove(at: dIndexPath.row)
-                            CVTwo.insertItems(at: [dIndexPath])
-                            //CVOne.deleteItems(at: [dIndexPath])
+                            if items.first!.dragItem.localObject as! UIImage === toReceive[dIndexPath.item] {
+                                print("it works !!!!")
+                                self.CVTwoImages.insert(items.first!.dragItem.localObject as! UIImage, at: dIndexPath.row)
+                                self.CVOneImages.remove(at: dIndexPath.row)
+                                CVTwo.insertItems(at: [dIndexPath])
+                                CVOne.deleteItems(at: [dIndexPath])
+                            }
+                            print(dIndexPath)
+                        })
+                        collectionView.performBatchUpdates({
+                            if items.first!.dragItem.localObject as! UIImage === toReceive[dIndexPath.item] {
+                                print("it works !!!!")
+                                self.CVTwoImages.remove(at: dIndexPath.row + 1)
+                                //self.CVOneImages.remove(at: dIndexPath.row)
+                                let nextIndexPath = NSIndexPath(row: dIndexPath.row + 1, section: 0)
+                                CVTwo.deleteItems(at: [nextIndexPath] as [IndexPath])
+                                //CVOne.deleteItems(at: [dIndexPath])
+                            } else {
+                                print("wrong place !!!")
+                            }
                             print(dIndexPath)
                         })
                         coordinator.drop(items.first!.dragItem, toItemAt: dIndexPath)

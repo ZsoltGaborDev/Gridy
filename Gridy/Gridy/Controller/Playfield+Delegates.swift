@@ -24,27 +24,26 @@ extension PlayfieldView: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.backgroundColor = .white
         // COLLECTION VIEW 1
         if collectionView == CVOne {
+            let width = (CVOne.frame.size.width - 30) / 6
+            let layout = CVOne.collectionViewLayout as! UICollectionViewFlowLayout
+            layout.itemSize = CGSize(width: width, height: width)
             print(indexPath.item)
             print(CVOneImages.count - 1)
             cell.imageView.image = CVOneImages[indexPath.item]
-            let width = CVOne.frame.size.width / 7
-            let layout = CVOne.collectionViewLayout as! UICollectionViewFlowLayout
-            layout.itemSize = CGSize(width: width, height: width)
         // COLLECTION VIEW 2
         } else {
-            cell.imageView.image = fixedImages.first!
-            if CVTwoImages[indexPath.item] === toReceive[indexPath.item] {
-                cell.imageView.image = CVTwoImages[indexPath.item]
-                print("right place!")
-                moves += 1
-            } else {
-                cell.imageView.image = fixedImages.first!
-                print("phone is shaking !!! wrong place!")
-                moves += 1
-            }
             let width = CVTwo.frame.size.width / 4
             let layout = CVTwo.collectionViewLayout as! UICollectionViewFlowLayout
             layout.itemSize = CGSize(width: width, height: width)
+            cell.imageView.image = CVTwoImages[indexPath.item]
+//            if CVTwoImages[indexPath.item] === toReceive[indexPath.item] {
+//                print("right place!")
+//                moves += 1
+//            } else {
+//                cell.imageView.image = fixedImages.first!
+//                print("phone is shaking !!! wrong place!")
+//                moves += 1
+//            }
         }
         return cell
     }
@@ -62,8 +61,31 @@ extension PlayfieldView: UICollectionViewDelegate, UICollectionViewDataSource {
     @objc func hidePopUpImage() {
         popUpView.isHidden = true
     }
-    func checkRightPlace() -> Bool {
-        return true
+    public override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.current.orientation.isLandscape,
+            let layoutOne = CVOne.collectionViewLayout as? UICollectionViewFlowLayout {
+            let width = (CVOne.frame.width - 30) / 6
+            layoutOne.itemSize = CGSize(width: width, height: width)
+            layoutOne.invalidateLayout()
+        } else
+            if UIDevice.current.orientation.isPortrait,
+            let layoutOne = CVOne.collectionViewLayout as? UICollectionViewFlowLayout {
+            let width = (CVOne.frame.width - 30) / 6
+            layoutOne.itemSize = CGSize(width: width , height: width)
+            layoutOne.invalidateLayout()
+        }
+        if UIDevice.current.orientation.isLandscape,
+            let layoutTwo = CVTwo.collectionViewLayout as? UICollectionViewFlowLayout {
+            let width = CVTwo.frame.width/4
+            layoutTwo.itemSize = CGSize(width: width, height: width)
+            layoutTwo.invalidateLayout()
+        } else if UIDevice.current.orientation.isPortrait,
+            let layoutTwo = CVTwo.collectionViewLayout as? UICollectionViewFlowLayout {
+            let width = CVTwo.frame.width/4
+            layoutTwo.itemSize = CGSize(width: width , height: width)
+            layoutTwo.invalidateLayout()
+        }
+        CVOne.reloadData()
+        CVTwo.reloadData()
     }
-    
 }

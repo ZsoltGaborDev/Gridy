@@ -36,14 +36,6 @@ extension PlayfieldView: UICollectionViewDelegate, UICollectionViewDataSource {
             let layout = CVTwo.collectionViewLayout as! UICollectionViewFlowLayout
             layout.itemSize = CGSize(width: width, height: width)
             cell.imageView.image = CVTwoImages[indexPath.item]
-//            if CVTwoImages[indexPath.item] === toReceive[indexPath.item] {
-//                print("right place!")
-//                moves += 1
-//            } else {
-//                cell.imageView.image = fixedImages.first!
-//                print("phone is shaking !!! wrong place!")
-//                moves += 1
-//            }
         }
         return cell
     }

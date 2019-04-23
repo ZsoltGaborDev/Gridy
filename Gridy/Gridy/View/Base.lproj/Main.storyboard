@@ -1677,6 +1677,26 @@ swipe out of the grid to undo</string>
                                     </constraint>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEb-E5-FQR">
+                                <rect key="frame" x="122.5" y="602" width="130" height="35"/>
+                                <color key="backgroundColor" red="0.53485649820000003" green="0.83075767759999997" blue="0.59683889150000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="VPX-56-kGV"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="oS3-gE-1qL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="share:" destination="bKF-eC-xzK" eventType="touchUpInside" id="uB1-hs-wgQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1722,6 +1742,7 @@ swipe out of the grid to undo</string>
                                 <variation key="heightClass=regular-widthClass=regular" constant="-100"/>
                             </constraint>
                             <constraint firstItem="zq4-tl-vIr" firstAttribute="bottom" secondItem="RbP-rI-Qu4" secondAttribute="bottom" id="T1d-ke-KbM"/>
+                            <constraint firstItem="Fj4-jo-vWc" firstAttribute="bottom" secondItem="yEb-E5-FQR" secondAttribute="bottom" constant="30" id="THc-TN-suE"/>
                             <constraint firstItem="MtF-tk-jrX" firstAttribute="trailing" secondItem="zq4-tl-vIr" secondAttribute="trailing" id="Wu2-2f-ffZ"/>
                             <constraint firstItem="ubj-J8-8RW" firstAttribute="centerY" secondItem="vvX-My-aQD" secondAttribute="centerY" id="aKb-9K-Ibr">
                                 <variation key="heightClass=compact-widthClass=compact" constant="20"/>
@@ -1737,6 +1758,7 @@ swipe out of the grid to undo</string>
                             <constraint firstItem="MtF-tk-jrX" firstAttribute="trailing" secondItem="Fj4-jo-vWc" secondAttribute="trailing" id="eM4-H4-b9S">
                                 <variation key="heightClass=compact-widthClass=regular" constant="-376"/>
                             </constraint>
+                            <constraint firstItem="yEb-E5-FQR" firstAttribute="centerX" secondItem="vvX-My-aQD" secondAttribute="centerX" id="hH8-gk-UJN"/>
                             <constraint firstItem="lAB-xD-yqL" firstAttribute="top" secondItem="zq4-tl-vIr" secondAttribute="bottom" id="iaN-gy-coH"/>
                             <constraint firstItem="HM0-MF-Og3" firstAttribute="trailing" secondItem="Fj4-jo-vWc" secondAttribute="trailing" id="kY9-ys-yda"/>
                             <constraint firstItem="zq4-tl-vIr" firstAttribute="centerY" secondItem="vvX-My-aQD" secondAttribute="centerY" id="kZH-Z7-XlI">
@@ -1794,6 +1816,9 @@ swipe out of the grid to undo</string>
                                 <exclude reference="af0-Zf-74N"/>
                                 <exclude reference="kZH-Z7-XlI"/>
                                 <exclude reference="mOD-eQ-hcn"/>
+                                <exclude reference="8Af-U0-53a"/>
+                                <exclude reference="9aR-WF-Rl0"/>
+                                <exclude reference="iaN-gy-coH"/>
                                 <exclude reference="0wz-ph-pV6"/>
                                 <exclude reference="319-ii-sZR"/>
                                 <exclude reference="4DD-YS-7zH"/>
@@ -1812,9 +1837,6 @@ swipe out of the grid to undo</string>
                                 <exclude reference="m3P-NZ-owK"/>
                                 <exclude reference="vQd-hk-VlP"/>
                                 <exclude reference="whJ-QX-U4h"/>
-                                <exclude reference="8Af-U0-53a"/>
-                                <exclude reference="9aR-WF-Rl0"/>
-                                <exclude reference="iaN-gy-coH"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
@@ -1871,6 +1893,9 @@ swipe out of the grid to undo</string>
                                 <exclude reference="HJF-e4-F99"/>
                                 <exclude reference="JYc-hb-uE4"/>
                                 <include reference="T1d-ke-KbM"/>
+                                <include reference="8Af-U0-53a"/>
+                                <include reference="9aR-WF-Rl0"/>
+                                <include reference="iaN-gy-coH"/>
                                 <include reference="4DD-YS-7zH"/>
                                 <include reference="aac-6q-uOf"/>
                                 <exclude reference="eM4-H4-b9S"/>
@@ -1881,9 +1906,6 @@ swipe out of the grid to undo</string>
                                 <exclude reference="sFd-ct-BsI"/>
                                 <include reference="vQd-hk-VlP"/>
                                 <exclude reference="wLN-sO-diO"/>
-                                <include reference="8Af-U0-53a"/>
-                                <include reference="9aR-WF-Rl0"/>
-                                <include reference="iaN-gy-coH"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -1907,13 +1929,15 @@ swipe out of the grid to undo</string>
                     <connections>
                         <outlet property="CVOne" destination="zq4-tl-vIr" id="ZIN-tv-YmV"/>
                         <outlet property="CVTwo" destination="ubj-J8-8RW" id="Vbr-Ak-YAb"/>
+                        <outlet property="newGameButton" destination="9BB-FK-4xt" id="ImB-ty-iiw"/>
                         <outlet property="popUpView" destination="Q6Y-ms-KY9" id="ZBc-73-HxR"/>
                         <outlet property="scoreLabel" destination="Mlq-EZ-azF" id="6Hq-Gc-4Nz"/>
+                        <outlet property="shareButton" destination="yEb-E5-FQR" id="AIV-c8-sbf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SSo-9l-kRA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1646.25" y="22.5"/>
+            <point key="canvasLocation" x="1645.5999999999999" y="22.03898050974513"/>
         </scene>
     </scenes>
     <resources>

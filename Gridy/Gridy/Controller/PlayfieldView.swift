@@ -18,6 +18,8 @@ class PlayfieldView: UIViewController {
     @IBOutlet weak var CVTwo: UICollectionView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var popUpView: UIImageView!
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var newGameButton: UIButton!
     
     //MARK: - Variables
     var toReceive = [UIImage]()
@@ -26,7 +28,9 @@ class PlayfieldView: UIViewController {
     var fixedImages = [UIImage(named: "Blank"), UIImage(named: "Gridy-lookup")]
     let frame = UIView()
     var moves: Int = 0
+    var rightMoves: Int = 0
     var popUpImage = UIImage()
+    var myOriginalIndexPath: IndexPath!
     
     //MARK: - View Functions
     override func viewDidLoad() {
@@ -36,6 +40,7 @@ class PlayfieldView: UIViewController {
         popUpView.image = popUpImage
         popUpView.isHidden = true
         scoring(moves: moves)
+        shareButton.isHidden = true
         for image in fixedImages {
             if let image = image {
                 CVOneImages.append(image)
@@ -58,14 +63,13 @@ class PlayfieldView: UIViewController {
             }
         }
     }
-    func scoring(moves: Int) {
-        self.moves += 1
-        scoreLabel.text = "\(moves)"
-    }
     
     //MARK: - IBActions
     @IBAction func newGameAction(_ sender: Any) { }
 
     @IBAction func unwindToViewController(_ sender: UIStoryboardSegue) { }
     
+    @IBAction func share(_ sender: Any) {
+        displaySharingOptions()
+    }
 }

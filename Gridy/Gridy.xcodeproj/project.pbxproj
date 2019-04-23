@@ -19,6 +19,8 @@
 		D737BF91224D276C00EDE9C7 /* Playfield+DragDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D737BF90224D276C00EDE9C7 /* Playfield+DragDrop.swift */; };
 		D737BF93224D2A1900EDE9C7 /* Playfield+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D737BF92224D2A1900EDE9C7 /* Playfield+Delegates.swift */; };
 		D76B459A2211F75F001A999F /* myCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76B45992211F75F001A999F /* myCell.swift */; };
+		D79D6161226B86AD002E18F1 /* Playfield+Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79D6160226B86AD002E18F1 /* Playfield+Share.swift */; };
+		D79D6163226BA5F9002E18F1 /* Playfield+Scoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79D6162226BA5F9002E18F1 /* Playfield+Scoring.swift */; };
 		D7A88B18220327BE000A9BCC /* timeburnernormal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7A88B17220327BE000A9BCC /* timeburnernormal.ttf */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,8 @@
 		D737BF90224D276C00EDE9C7 /* Playfield+DragDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Playfield+DragDrop.swift"; sourceTree = "<group>"; };
 		D737BF92224D2A1900EDE9C7 /* Playfield+Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Playfield+Delegates.swift"; sourceTree = "<group>"; };
 		D76B45992211F75F001A999F /* myCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCell.swift; sourceTree = "<group>"; };
+		D79D6160226B86AD002E18F1 /* Playfield+Share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Playfield+Share.swift"; sourceTree = "<group>"; };
+		D79D6162226BA5F9002E18F1 /* Playfield+Scoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Playfield+Scoring.swift"; sourceTree = "<group>"; };
 		D7A88B17220327BE000A9BCC /* timeburnernormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnernormal.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +107,8 @@
 				D7379C9522036EB200813362 /* PlayfieldView.swift */,
 				D737BF90224D276C00EDE9C7 /* Playfield+DragDrop.swift */,
 				D737BF92224D2A1900EDE9C7 /* Playfield+Delegates.swift */,
+				D79D6162226BA5F9002E18F1 /* Playfield+Scoring.swift */,
+				D79D6160226B86AD002E18F1 /* Playfield+Share.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -195,11 +201,13 @@
 			files = (
 				D729C39A2205DF4200A0D3C0 /* ViewController.swift in Sources */,
 				D729C39C2205ECF100A0D3C0 /* CustomButton.swift in Sources */,
+				D79D6161226B86AD002E18F1 /* Playfield+Share.swift in Sources */,
 				D7270FA42234427800BE1D45 /* Creation.swift in Sources */,
 				D737BF91224D276C00EDE9C7 /* Playfield+DragDrop.swift in Sources */,
 				D7379C9422036CE100813362 /* ImageEditorView.swift in Sources */,
 				D72D6BB82200C41400755600 /* AppDelegate.swift in Sources */,
 				D737BF93224D2A1900EDE9C7 /* Playfield+Delegates.swift in Sources */,
+				D79D6163226BA5F9002E18F1 /* Playfield+Scoring.swift in Sources */,
 				D76B459A2211F75F001A999F /* myCell.swift in Sources */,
 				D7379C9622036EB200813362 /* PlayfieldView.swift in Sources */,
 			);

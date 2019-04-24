@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import Photos
 import MobileCoreServices
+import AudioToolbox
 
 class PlayfieldView: UIViewController {
     
@@ -30,7 +31,6 @@ class PlayfieldView: UIViewController {
     var moves: Int = 0
     var rightMoves: Int = 0
     var popUpImage = UIImage()
-    var myOriginalIndexPath: IndexPath!
     
     //MARK: - View Functions
     override func viewDidLoad() {
@@ -40,7 +40,6 @@ class PlayfieldView: UIViewController {
         popUpView.image = popUpImage
         popUpView.isHidden = true
         scoring(moves: moves)
-        shareButton.isHidden = true
         for image in fixedImages {
             if let image = image {
                 CVOneImages.append(image)
@@ -49,7 +48,7 @@ class PlayfieldView: UIViewController {
             }
         }
         CVOne.dragInteractionEnabled = true
-        CVTwo.dragInteractionEnabled = false
+        CVTwo.dragInteractionEnabled = true
         if CVTwoImages.count == 0 {
             if let blank = UIImage(named: "Blank") {
                 var temp = [UIImage]()
@@ -67,9 +66,18 @@ class PlayfieldView: UIViewController {
     //MARK: - IBActions
     @IBAction func newGameAction(_ sender: Any) { }
 
-    @IBAction func unwindToViewController(_ sender: UIStoryboardSegue) { }
+    //@IBAction func unwindToViewController(_ sender: UIStoryboardSegue) { }
     
-    @IBAction func share(_ sender: Any) {
-        displaySharingOptions()
+    func vibrate() {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "my3rdSegue" {
+            let vc3 = segue.destination as! GameOverView
+            vc3.popUpImage = popUpImage
+            vc3.rightMoves = rightMoves
+            vc3.moves = moves - 1
+            vc3.score = yourScore()
+        }
     }
 }

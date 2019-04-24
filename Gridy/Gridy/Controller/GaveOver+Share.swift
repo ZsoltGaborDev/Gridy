@@ -8,18 +8,9 @@
 
 import UIKit
 
-extension PlayfieldView {
+extension GameOverView {
     
-    func showShareButton() {
-        if rightMoves == CVOneImages.count {
-            shareButton.isHidden = false
-        } else {
-            shareButton.isHidden = true
-        }
-    }
     func displaySharingOptions() {
-        shareButton.isHidden = true
-        newGameButton.isHidden = true
         //prepare content to share
         let note = "I MADE IT!"
         let image = composeCreationImage()
@@ -36,8 +27,6 @@ extension PlayfieldView {
         view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
         let viewToShare = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-        newGameButton.isHidden = false
-        shareButton.isHidden = false
         return viewToShare
     }
     

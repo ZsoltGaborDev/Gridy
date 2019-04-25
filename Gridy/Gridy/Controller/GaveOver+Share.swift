@@ -12,6 +12,12 @@ extension GameOverView {
     
     func displaySharingOptions() {
         //prepare content to share
+        optionsButton.isHidden = true
+        scoreListView.isHidden = false
+        popUpView.isHidden = false
+        UIView.animate(withDuration: 3) {
+            self.visualEffectView.effect = UIBlurEffect(style: .regular)
+        }
         let note = "I MADE IT!"
         let image = composeCreationImage()
         let items = [image as Any, note as Any]
@@ -27,7 +33,7 @@ extension GameOverView {
         view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
         let viewToShare = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
+        optionsButton.isHidden = false
         return viewToShare
     }
-    
 }

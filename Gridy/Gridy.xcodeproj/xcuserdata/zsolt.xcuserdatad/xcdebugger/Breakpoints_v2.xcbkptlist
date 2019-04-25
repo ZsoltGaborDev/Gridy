@@ -2,4 +2,220 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gridy/Controller/GameOverView.swift"
+            timestampString = "577907395.747395"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gridy.GameOverView.backgroundImageView.getter : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "Gridy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zsolt/Desktop/OpenClassrooms/Project%205%20build%20Gridy%20a%20photo%20puzzle%20app/Gridy/Gridy/Controller/GameOverView.swift"
+                  timestampString = "577902615.374861"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gridy.GameOverView.backgroundImageView.setter : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "Gridy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zsolt/Desktop/OpenClassrooms/Project%205%20build%20Gridy%20a%20photo%20puzzle%20app/Gridy/Gridy/Controller/GameOverView.swift"
+                  timestampString = "577902615.3811181"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "106">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gridy.GameOverView.backgroundImageView.modify : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "Gridy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zsolt/Desktop/OpenClassrooms/Project%205%20build%20Gridy%20a%20photo%20puzzle%20app/Gridy/Gridy/Controller/GameOverView.swift"
+                  timestampString = "577902615.383725"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "69">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gridy.GameOverView.backgroundImageView.modify : Swift.Optional&lt;__C.UIImageView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Gridy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zsolt/Desktop/OpenClassrooms/Project%205%20build%20Gridy%20a%20photo%20puzzle%20app/Gridy/Gridy/Controller/GameOverView.swift"
+                  timestampString = "577902615.386405"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gridy.GameOverView.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Gridy.GameOverView"
+                  moduleName = "Gridy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zsolt/Desktop/OpenClassrooms/Project%205%20build%20Gridy%20a%20photo%20puzzle%20app/Gridy/Gridy/Controller/GameOverView.swift"
+                  timestampString = "577902615.388901"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "219">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gridy.GameOverView.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Gridy.GameOverView&gt;"
+                  moduleName = "Gridy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zsolt/Desktop/OpenClassrooms/Project%205%20build%20Gridy%20a%20photo%20puzzle%20app/Gridy/Gridy/Controller/GameOverView.swift"
+                  timestampString = "577902615.391381"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "139">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gridy/Controller/GameOverView.swift"
+            timestampString = "577907395.747511"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "7"
+            endingLineNumber = "7"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gridy.GameOverView.backgroundImageView.getter : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "Gridy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zsolt/Desktop/OpenClassrooms/Project%205%20build%20Gridy%20a%20photo%20puzzle%20app/Gridy/Gridy/Controller/GameOverView.swift"
+                  timestampString = "577902622.556187"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gridy.GameOverView.backgroundImageView.setter : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "Gridy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zsolt/Desktop/OpenClassrooms/Project%205%20build%20Gridy%20a%20photo%20puzzle%20app/Gridy/Gridy/Controller/GameOverView.swift"
+                  timestampString = "577902622.559444"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "106">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gridy.GameOverView.backgroundImageView.modify : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "Gridy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zsolt/Desktop/OpenClassrooms/Project%205%20build%20Gridy%20a%20photo%20puzzle%20app/Gridy/Gridy/Controller/GameOverView.swift"
+                  timestampString = "577902622.562145"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "69">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gridy.GameOverView.backgroundImageView.modify : Swift.Optional&lt;__C.UIImageView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Gridy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zsolt/Desktop/OpenClassrooms/Project%205%20build%20Gridy%20a%20photo%20puzzle%20app/Gridy/Gridy/Controller/GameOverView.swift"
+                  timestampString = "577902622.565074"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gridy.GameOverView.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Gridy.GameOverView"
+                  moduleName = "Gridy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zsolt/Desktop/OpenClassrooms/Project%205%20build%20Gridy%20a%20photo%20puzzle%20app/Gridy/Gridy/Controller/GameOverView.swift"
+                  timestampString = "577902622.567842"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "219">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gridy.GameOverView.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Gridy.GameOverView&gt;"
+                  moduleName = "Gridy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zsolt/Desktop/OpenClassrooms/Project%205%20build%20Gridy%20a%20photo%20puzzle%20app/Gridy/Gridy/Controller/GameOverView.swift"
+                  timestampString = "577902622.570716"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "139">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

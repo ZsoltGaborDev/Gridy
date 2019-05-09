@@ -27,8 +27,6 @@ extension PlayfieldView: UICollectionViewDelegate, UICollectionViewDataSource {
             let width = (CVOne.frame.size.width - 30) / 6
             let layout = CVOne.collectionViewLayout as! UICollectionViewFlowLayout
             layout.itemSize = CGSize(width: width, height: width)
-            print(indexPath.item)
-            print(CVOneImages.count - 1)
             cell.imageView.image = CVOneImages[indexPath.item]
         // COLLECTION VIEW 2
         } else {
@@ -40,7 +38,7 @@ extension PlayfieldView: UICollectionViewDelegate, UICollectionViewDataSource {
         return cell
     }
     
-    //MARK: - Did Select Item At
+    //MARK: - Did Select Item At - help button
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.item == (CVOneImages.count - 1) {
             popUpView.isHidden = false
@@ -53,6 +51,7 @@ extension PlayfieldView: UICollectionViewDelegate, UICollectionViewDataSource {
     @objc func hidePopUpImage() {
         popUpView.isHidden = true
     }
+    //MARK: Orientation Transition
     public override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         if UIDevice.current.orientation.isLandscape,
             let layoutOne = CVOne.collectionViewLayout as? UICollectionViewFlowLayout {

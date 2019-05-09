@@ -11,16 +11,18 @@ import Photos
 import AVFoundation
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate {
-    
+    //MARK: Outlets
     @IBOutlet weak var gridyLogo: UIImageView!
     @IBOutlet weak var orLoadYourOwnLabel: UILabel!
     @IBOutlet weak var challengeYourselfLabel: UILabel!
     
+    //MARK: variables and constants
     var creation = Creation.init()
     var localImages = [UIImage].init()
     let imagePickerController = UIImagePickerController()
     var newImage = UIImage.init()
     
+    //MARK: IBActions
     @IBAction func cameraButton(_ sender: UIButton) {
         displayCamera()
     }
@@ -40,6 +42,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         super.viewDidLoad()
         collectLocalImageSet()
     }
+    //MARK: Access to camera and library
     func displayCamera() {
         let sourceType = UIImagePickerController.SourceType.camera
         if UIImagePickerController.isSourceTypeAvailable(sourceType) {
@@ -94,6 +97,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             troubleAlert(message: "Sincere apologise, it looks like we can't access your photo library at this time")
         }
     }
+    //MARK: image picking
     func presentImagePicker(sourceType: UIImagePickerController.SourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self

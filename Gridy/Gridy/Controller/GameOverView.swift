@@ -10,9 +10,9 @@ import UIKit
 
 class GameOverView: UIViewController {
     
+    //MARK: Outlets
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
-    @IBOutlet weak var popUpView: UIImageView!
     @IBOutlet weak var optionsButton: UIButton!
     @IBOutlet weak var scoreListView: UIView!
     @IBOutlet weak var yourScore: UILabel!
@@ -20,7 +20,7 @@ class GameOverView: UIViewController {
     @IBOutlet weak var wrongMoves: UILabel!
     @IBOutlet weak var correctMoves: UILabel!
     
-    
+    //MARK: Variables
     var popUpImage = UIImage()
     var rightMoves = Int()
     var moves = Int()
@@ -28,8 +28,6 @@ class GameOverView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        popUpView.image = popUpImage
-        popUpView.isHidden = true
         backgroundImageView.image = popUpImage
         correctMoves.text = "Correct Moves: \(rightMoves)"
         totalMoves.text = "Total Moves: \(moves)"
@@ -39,11 +37,11 @@ class GameOverView: UIViewController {
     }
     
     @IBAction func optionsButtonPressed(_ sender: UIButton) {
-        showAlert()
-        scoreListView.isHidden = true
-        optionsButton.isHidden = true
-        UIView.animate(withDuration: 3) {
+        UIView.animate(withDuration: 0.7) {
             self.visualEffectView.effect = UIBlurEffect(style: .regular)
+            self.scoreListView.alpha = 0
+            self.optionsButton.alpha = 0
+            self.showAlert()
         }
     }
     
@@ -59,11 +57,10 @@ class GameOverView: UIViewController {
         })
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive) {(action) in
-            UIView.animate(withDuration: 2) {
+            UIView.animate(withDuration: 0.2) {
                 self.visualEffectView.effect = nil
-                self.scoreListView.isHidden = false
-                self.popUpView.isHidden = true
-                self.optionsButton.isHidden = false
+                self.scoreListView.alpha = 1
+                self.optionsButton.alpha = 1
             }
         })
         self.present(alert, animated: true, completion: nil)

@@ -28,31 +28,35 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
     var panRecognizer: UIPanGestureRecognizer?
     var pinchRecognizer: UIPinchGestureRecognizer?
     var rotateRecognizer: UIRotationGestureRecognizer?
-    var screenshot = UIImage.init()
     var toSend = [UIImage]()
+    var screenshot = UIImage()
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setImage()
+        
+        // Create gesture with target self(viewcontroller) and handler function.
+        self.panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.handlePan(recognizer:)))
+        self.pinchRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(self.handlePinch(recognizer:)))
+        self.rotateRecognizer = UIRotationGestureRecognizer(target: self, action: #selector(self.handleRotate(recognizer:)))
+        
+        //delegate gesture with UIGestureRecognizerDelegate
+        pinchRecognizer?.delegate = self
+        rotateRecognizer?.delegate = self
+        panRecognizer?.delegate = self
+        
+        // add gesture to creation.imageView
+        self.creationImageView.addGestureRecognizer(panRecognizer!)
+        self.creationImageView.addGestureRecognizer(pinchRecognizer!)
+        self.creationImageView.addGestureRecognizer(rotateRecognizer!)
+    }
     
     func setImage() {
         if let myImage = incomingImage {
             creationImageView.image = myImage
             backgroundImage.image = myImage
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setImage()
-        // Create gesture with target self(viewcontroller) and handler function.
-        self.panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.handlePan(recognizer:)))
-        self.pinchRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(self.handlePinch(recognizer:)))
-        self.rotateRecognizer = UIRotationGestureRecognizer(target: self, action: #selector(self.handleRotate(recognizer:)))
-        //delegate gesture with UIGestureRecognizerDelegate
-        pinchRecognizer?.delegate = self
-        rotateRecognizer?.delegate = self
-        panRecognizer?.delegate = self
-        // add gesture to creation.imageView
-        self.creationImageView.addGestureRecognizer(panRecognizer!)
-        self.creationImageView.addGestureRecognizer(pinchRecognizer!)
-        self.creationImageView.addGestureRecognizer(rotateRecognizer!)
     }
     
     // handle UIPanGestureRecognizer
@@ -80,6 +84,7 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
             recognizer.rotation = 0.0
         }
     }
+    
     // mark sure you override this function to make gestures work together
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         // simultaneous gesture recognition will only be supported for creationImageView
@@ -95,11 +100,15 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
         }
         return true
     }
-    func composeCreationImage() {
-        UIGraphicsBeginImageContextWithOptions(creationFrame.bounds.size, false, 0)
-        creationImageView.drawHierarchy(in: creationFrame.bounds, afterScreenUpdates: true)
-        screenshot = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
+    func composeCreationImage(completion: @escaping (UIImage) -> Void) {
+        DispatchQueue.main.async {
+            UIGraphicsBeginImageContextWithOptions(self.creationFrame.bounds.size, false, 0)
+            self.creationFrame.drawHierarchy(in: self.creationFrame.bounds, afterScreenUpdates: true)
+            self.screenshot = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+            
+            completion(self.screenshot)
+        }
     }
     func slice(screenshot: UIImage, into howMany: Int) -> [UIImage] {
         let width: CGFloat
@@ -146,12 +155,15 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
     }
     
     func setImageToSend() {
-        composeCreationImage()
         DispatchQueue.global(qos: .userInitiated).async {
-            self.toSend = self.slice(screenshot: self.screenshot, into: 4)
+            self.composeCreationImage { image in
+                self.toSend = self.slice(screenshot: image, into: 4)
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "my2ndSegue", sender: self)
+                }
+            }
         }
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "my2ndSegue" {

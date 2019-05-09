@@ -9,14 +9,13 @@
 import UIKit
 
 extension GameOverView {
-    
+    //MARK: Sharing options
     func displaySharingOptions() {
         //prepare content to share
-        optionsButton.isHidden = true
-        scoreListView.isHidden = false
-        popUpView.isHidden = false
-        UIView.animate(withDuration: 3) {
-            self.visualEffectView.effect = UIBlurEffect(style: .regular)
+        UIView.animate(withDuration: 0.5) {
+            self.visualEffectView.effect = nil
+            self.optionsButton.alpha = 0
+            self.scoreListView.alpha = 1
         }
         let note = "I MADE IT!"
         let image = composeCreationImage()
@@ -28,12 +27,13 @@ extension GameOverView {
         //present activity view controller
         present(activityViewController, animated: true, completion: nil)
     }
+    //MARK: Prepare image for share. 
     func composeCreationImage() -> UIImage {
         UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0)
         view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
         let viewToShare = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-        optionsButton.isHidden = false
+        optionsButton.alpha = 1
         return viewToShare
     }
 }

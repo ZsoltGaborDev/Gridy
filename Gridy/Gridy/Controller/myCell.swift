@@ -15,5 +15,4 @@ class myCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
     }
-
 }

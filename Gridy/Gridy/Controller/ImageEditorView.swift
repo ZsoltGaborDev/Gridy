@@ -15,12 +15,15 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var creationFrame: UIView!
     @IBOutlet weak var creationImageView: UIImageView!
+    @IBOutlet weak var gridView: UICollectionView!
+    
     @IBAction func StartButton(_ sender: UIButton) {
         setImageToSend()
     }
     @IBAction func XButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    
     var incomingImage: UIImage?
     var initialImageViewOffset = CGPoint()
     var defaults = UserDefaults.standard
@@ -30,7 +33,6 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
     var rotateRecognizer: UIRotationGestureRecognizer?
     var toSend = [UIImage]()
     var screenshot = UIImage()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,6 +102,7 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
         }
         return true
     }
+    
     func composeCreationImage(completion: @escaping (UIImage) -> Void) {
         DispatchQueue.main.async {
             UIGraphicsBeginImageContextWithOptions(self.creationFrame.bounds.size, false, 0)
@@ -110,6 +113,7 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
             completion(self.screenshot)
         }
     }
+    
     func slice(screenshot: UIImage, into howMany: Int) -> [UIImage] {
         let width: CGFloat
         let height: CGFloat

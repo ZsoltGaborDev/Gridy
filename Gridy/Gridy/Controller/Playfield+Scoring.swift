@@ -13,8 +13,9 @@ extension PlayfieldView {
         self.moves += 1
         scoreLabel.text = "\(moves)"
     }
+    
     func yourScore() -> Int {
-        let score = moves * 100 / (moves - rightMoves)
+        let score = (moves * 100) / (moves - rightMoves)
         return score
     }
 }

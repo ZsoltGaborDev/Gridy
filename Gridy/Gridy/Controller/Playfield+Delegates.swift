@@ -15,7 +15,6 @@ extension PlayfieldView: UICollectionViewDelegate, UICollectionViewDataSource {
         return collectionView == self.CVOne ? CVOneImages.count : CVTwoImages.count
     }
 
-    
     //MARK: - Cell For Item At
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! myCell
@@ -48,9 +47,11 @@ extension PlayfieldView: UICollectionViewDelegate, UICollectionViewDataSource {
             Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.hidePopUpImage), userInfo: nil, repeats: false)
         }
     }
+    
     @objc func hidePopUpImage() {
         popUpView.isHidden = true
     }
+    
     //MARK: Orientation Transition
     public override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         if UIDevice.current.orientation.isLandscape,

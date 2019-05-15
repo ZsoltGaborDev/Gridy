@@ -20,6 +20,13 @@ class PlayfieldView: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var popUpView: UIImageView!
     @IBOutlet weak var newGameButton: UIButton!
+    @IBAction func switchButtonOn(_ sender: UISwitch) {
+        if sender .isOn {
+            soundIsOn = true
+        } else {
+            soundIsOn = false
+        }
+    }
     
     //MARK: - Variables
     var toReceive = [UIImage]()
@@ -30,6 +37,11 @@ class PlayfieldView: UIViewController, AVAudioPlayerDelegate {
     var rightMoves: Int = 0
     var popUpImage = UIImage()
     var isSelected: IndexPath?
+    var soundIsOn: Bool = true
+    
+    
+    
+   
     
     //MARK: - View Functions
     override func viewDidLoad() {
@@ -62,7 +74,6 @@ class PlayfieldView: UIViewController, AVAudioPlayerDelegate {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //MARK: - IBActions
@@ -73,18 +84,20 @@ class PlayfieldView: UIViewController, AVAudioPlayerDelegate {
     }
     
     func playSound() {
-        var audioPlayer = AVAudioPlayer()
-        let soundURL = Bundle.main.url(forResource: "oookay", withExtension: "wav")
-    
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: soundURL!)
-            print("sound is playing!!")
-        }
-        catch {
+        if soundIsOn == true {
+            var audioPlayer = AVAudioPlayer()
+            let soundURL = Bundle.main.url(forResource: "oookay", withExtension: "wav")
             
-            print (error)
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: soundURL!)
+                print("sound is playing!!")
+            }
+            catch {
+                
+                print (error)
+            }
+            audioPlayer.play()
         }
-        audioPlayer.play()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -96,5 +109,6 @@ class PlayfieldView: UIViewController, AVAudioPlayerDelegate {
             vc3.score = yourScore()
         }
     }
+    
     
 }

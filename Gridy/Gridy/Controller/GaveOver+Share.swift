@@ -27,6 +27,7 @@ extension GameOverView {
         //present activity view controller
         present(activityViewController, animated: true, completion: nil)
     }
+    
     //MARK: Prepare image for share. 
     func composeCreationImage() -> UIImage {
         UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0)

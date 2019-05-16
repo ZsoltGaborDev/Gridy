@@ -50,8 +50,8 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>$(PRODUCT_NAME) camera use</string>
-	<key>NSCalendarsUsageDescription</key>
-	<string>$(PRODUCT_NAME) photo use</string>
+	<string>$(PRODUCT_NAME) Need to acces your library to take awsome photo for puzzle</string>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) Need to use your camera to take awsome selfies of yourself to make a puzzle</string>
 </dict>
 </plist>

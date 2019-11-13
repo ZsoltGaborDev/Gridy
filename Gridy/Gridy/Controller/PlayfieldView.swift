@@ -39,7 +39,7 @@ class PlayfieldView: UIViewController, AVAudioPlayerDelegate {
     var isSelected: IndexPath?
     var soundIsOn: Bool = true
     var audioPlayer: AVAudioPlayer?
-    
+
     //MARK: - View Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +74,12 @@ class PlayfieldView: UIViewController, AVAudioPlayerDelegate {
     }
     
     //MARK: - IBActions
-    @IBAction func newGameAction(_ sender: Any) { }
+    @IBAction func newGameAction(_ sender: Any) {
+         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            appDelegate.window?.rootViewController?.dismiss(animated: true, completion: nil)
+            (appDelegate.window?.rootViewController as? UINavigationController)?.popToRootViewController(animated: true)
+         }
+    }
     
     func vibrate() {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)

@@ -15,13 +15,15 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var creationFrame: UIView!
     @IBOutlet weak var creationImageView: UIImageView!
-    @IBOutlet weak var gridView: UICollectionView!
     
     @IBAction func StartButton(_ sender: UIButton) {
         setImageToSend()
     }
     @IBAction func XButton(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+           appDelegate.window?.rootViewController?.dismiss(animated: true, completion: nil)
+           (appDelegate.window?.rootViewController as? UINavigationController)?.popToRootViewController(animated: true)
+        }
     }
     
     var incomingImage: UIImage?

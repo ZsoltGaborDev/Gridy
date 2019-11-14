@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0yI-XJ-WbE">
-    <device id="retina6_5" orientation="landscape" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController storyboardIdentifier="entryView" id="BYZ-38-t0r" customClass="ViewController" customModule="Gridy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dI9-1F-HYV" userLabel="Photo Library Button">
-                                <rect key="frame" x="523" y="247" width="110" height="80"/>
+                                <rect key="frame" x="222" y="608" width="110" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boa-CO-w7f">
                                         <rect key="frame" x="0.0" y="0.0" width="110" height="80"/>
@@ -32,7 +32,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo Library" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lui-Zc-1OL">
-                                        <rect key="frame" x="9.6666666666666288" y="53" width="91" height="18"/>
+                                        <rect key="frame" x="9.5" y="53" width="91" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="6Oi-dB-z5K"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="91" id="8ZQ-DC-rMu"/>
@@ -162,7 +162,7 @@
                                 </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-- OR load your own --" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZb-dS-Jl8">
-                                <rect key="frame" x="566.66666666666663" y="207" width="183" height="20"/>
+                                <rect key="frame" x="115.5" y="578" width="183" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="41z-m2-NnA"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="BQH-Xo-r8w"/>
@@ -221,7 +221,7 @@
                                 </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Od3-ci-OTD" userLabel="Pick Button">
-                                <rect key="frame" x="602" y="87" width="112" height="80"/>
+                                <rect key="frame" x="151" y="458" width="112" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYV-u0-yeR">
                                         <rect key="frame" x="-1" y="0.0" width="112" height="80"/>
@@ -236,7 +236,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZh-MV-G3R">
-                                        <rect key="frame" x="41.666666666666629" y="53" width="29" height="18"/>
+                                        <rect key="frame" x="41.5" y="53" width="29" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="0CM-Ij-yQx"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="29" id="8HK-5P-NJl"/>
@@ -364,7 +364,7 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="meU-ay-Uy1" userLabel="Camera Button">
-                                <rect key="frame" x="683" y="247" width="110" height="80"/>
+                                <rect key="frame" x="82" y="608" width="110" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWn-xh-rYI">
                                         <rect key="frame" x="0.0" y="0.0" width="110" height="80"/>
@@ -379,7 +379,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKV-9h-X5w">
-                                        <rect key="frame" x="28.666666666666629" y="53" width="53" height="18"/>
+                                        <rect key="frame" x="28.5" y="53" width="53" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="cFH-0X-NbL"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="53" id="f8a-Il-fA2"/>
@@ -507,12 +507,11 @@
                                 </variation>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gridy-name-large-green" translatesAutoresizingMaskIntoConstraints="NO" id="Y02-6e-Rrh">
-                                <rect key="frame" x="93" y="132" width="310" height="150"/>
+                                <rect key="frame" x="57" y="222" width="300" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="0Oe-DR-uRp"/>
                                     <constraint firstAttribute="width" constant="300" id="DHy-jB-dob"/>
                                     <constraint firstAttribute="width" constant="310" id="MaC-qk-uNs"/>
-                                    <constraint firstAttribute="width" constant="310" id="X6t-I1-8Ix"/>
                                     <constraint firstAttribute="height" constant="150" id="aqu-y6-Efc"/>
                                     <constraint firstAttribute="height" constant="150" id="b1p-eD-Wxg"/>
                                 </constraints>
@@ -520,7 +519,6 @@
                                     <mask key="constraints">
                                         <exclude reference="0Oe-DR-uRp"/>
                                         <exclude reference="MaC-qk-uNs"/>
-                                        <exclude reference="X6t-I1-8Ix"/>
                                         <exclude reference="b1p-eD-Wxg"/>
                                     </mask>
                                 </variation>
@@ -532,20 +530,18 @@
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=regular">
                                     <mask key="constraints">
-                                        <include reference="X6t-I1-8Ix"/>
                                         <include reference="b1p-eD-Wxg"/>
                                     </mask>
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Challenge yourself with a photo puzzle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sab-WM-fmi">
-                                <rect key="frame" x="93" y="266" width="310" height="20"/>
+                                <rect key="frame" x="57" y="356" width="300" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="GKS-nw-a76"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="INh-tA-bnP"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="310" id="M9q-wL-oZf"/>
                                     <constraint firstAttribute="height" constant="20" id="P6S-AM-sOb"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="310" id="X9B-it-AqH"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="310" id="dfG-Yn-t1M"/>
                                     <constraint firstAttribute="height" constant="20" id="iBY-SS-xoQ"/>
                                     <constraint firstAttribute="height" constant="20" id="q8r-AL-jeM"/>
                                 </constraints>
@@ -558,7 +554,6 @@
                                         <exclude reference="M9q-wL-oZf"/>
                                         <exclude reference="P6S-AM-sOb"/>
                                         <exclude reference="X9B-it-AqH"/>
-                                        <exclude reference="dfG-Yn-t1M"/>
                                         <exclude reference="iBY-SS-xoQ"/>
                                     </mask>
                                 </variation>
@@ -574,7 +569,6 @@
                                     <mask key="constraints">
                                         <include reference="GKS-nw-a76"/>
                                         <exclude reference="INh-tA-bnP"/>
-                                        <include reference="dfG-Yn-t1M"/>
                                         <exclude reference="q8r-AL-jeM"/>
                                     </mask>
                                 </variation>
@@ -701,9 +695,6 @@
                             <constraint firstItem="cZb-dS-Jl8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rHh-qW-qRg">
                                 <variation key="heightClass=compact-widthClass=regular" constant="210"/>
                             </constraint>
-                            <constraint firstItem="Sab-WM-fmi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uM8-xl-Bbw">
-                                <variation key="heightClass=compact-widthClass=regular" constant="68"/>
-                            </constraint>
                             <constraint firstItem="Sab-WM-fmi" firstAttribute="leading" secondItem="Y02-6e-Rrh" secondAttribute="leading" id="uXk-Fj-uAS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -719,7 +710,6 @@
                                 <exclude reference="JjM-AP-ybb"/>
                                 <exclude reference="VPA-0j-o71"/>
                                 <exclude reference="ali-O1-zmM"/>
-                                <exclude reference="uM8-xl-Bbw"/>
                                 <exclude reference="uXk-Fj-uAS"/>
                                 <exclude reference="2Uj-Gb-iNm"/>
                                 <exclude reference="5YG-2c-4Ky"/>
@@ -792,7 +782,6 @@
                                 <exclude reference="DyC-HQ-MET"/>
                                 <include reference="JjM-AP-ybb"/>
                                 <exclude reference="pzF-03-S8p"/>
-                                <include reference="uM8-xl-Bbw"/>
                                 <include reference="5YG-2c-4Ky"/>
                                 <include reference="dm2-cH-gfK"/>
                                 <include reference="0fM-6z-xUJ"/>
@@ -843,21 +832,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-678.26086956521749" y="-1304.4642857142856"/>
+            <point key="canvasLocation" x="-480" y="-1304"/>
         </scene>
         <!--Image Editor View-->
         <scene sceneID="g2j-ru-fVt">
             <objects>
                 <viewController id="lnh-J7-Pqq" customClass="ImageEditorView" customModule="Gridy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jmz-49-8oL">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lake" translatesAutoresizingMaskIntoConstraints="NO" id="YSC-Id-n1g">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jra-BG-5BC" userLabel="Creation Frame">
-                                <rect key="frame" x="128" y="57" width="300" height="300"/>
+                                <rect key="frame" x="57" y="298" width="300" height="300"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lake" translatesAutoresizingMaskIntoConstraints="NO" id="f4c-dU-rpn">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
@@ -906,7 +895,7 @@
                                 </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02C-hD-VhD">
-                                <rect key="frame" x="613" y="114.66666666666669" width="170" height="45"/>
+                                <rect key="frame" x="122" y="241.5" width="170" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="4lL-rb-PM2"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="L3T-Lq-FF8"/>
@@ -946,7 +935,7 @@ zoom, rotate, reposition.</string>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="diE-7Z-gN3" userLabel="X Button">
-                                <rect key="frame" x="802" y="44" width="30" height="50"/>
+                                <rect key="frame" x="364" y="88" width="30" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="KaY-SI-QWX"/>
                                     <constraint firstAttribute="height" constant="50" id="wic-sE-GwA"/>
@@ -960,7 +949,7 @@ zoom, rotate, reposition.</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yta-pG-FET">
-                                <rect key="frame" x="643" y="177" width="110" height="80"/>
+                                <rect key="frame" x="152" y="786" width="110" height="80"/>
                                 <color key="backgroundColor" red="0.53485649824142456" green="0.83075767755508423" blue="0.59683889150619507" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="EPk-g4-iFG"/>
@@ -1141,19 +1130,22 @@ zoom, rotate, reposition.</string>
             <objects>
                 <viewController id="bKF-eC-xzK" customClass="PlayfieldView" customModule="Gridy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vvX-My-aQD">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HM0-MF-Og3" userLabel="Top Container">
-                                <rect key="frame" x="44" y="54" width="808" height="35"/>
+                                <rect key="frame" x="0.0" y="98" width="414" height="35"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9BB-FK-4xt">
-                                        <rect key="frame" x="9" y="0.0" width="90" height="35"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9BB-FK-4xt">
+                                        <rect key="frame" x="10" y="0.0" width="90" height="35"/>
                                         <color key="backgroundColor" red="0.53485649824142456" green="0.83075767755508423" blue="0.59683889150619507" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="1YV-yO-SCU"/>
                                             <constraint firstAttribute="height" constant="35" id="J3o-sG-Wdh"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="KVD-mK-8qZ"/>
+                                            <constraint firstAttribute="width" constant="70" id="QUA-AV-Vcl">
+                                                <variation key="heightClass=compact-widthClass=regular" constant="80"/>
+                                            </constraint>
                                             <constraint firstAttribute="width" constant="90" id="pa4-uK-6CR"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1175,13 +1167,15 @@ zoom, rotate, reposition.</string>
                                             <mask key="constraints">
                                                 <exclude reference="J3o-sG-Wdh"/>
                                                 <exclude reference="KVD-mK-8qZ"/>
+                                                <exclude reference="QUA-AV-Vcl"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
                                             <mask key="constraints">
                                                 <exclude reference="1YV-yO-SCU"/>
                                                 <include reference="J3o-sG-Wdh"/>
-                                                <include reference="KVD-mK-8qZ"/>
+                                                <exclude reference="KVD-mK-8qZ"/>
+                                                <include reference="QUA-AV-Vcl"/>
                                                 <exclude reference="pa4-uK-6CR"/>
                                             </mask>
                                         </variation>
@@ -1190,7 +1184,7 @@ zoom, rotate, reposition.</string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="moves:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIW-AH-2r8">
-                                        <rect key="frame" x="692" y="12" width="40" height="15"/>
+                                        <rect key="frame" x="321" y="15" width="40" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="0fZ-e0-ZJZ"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="IvT-DU-ksl"/>
@@ -1212,8 +1206,8 @@ zoom, rotate, reposition.</string>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
                                             <mask key="constraints">
-                                                <include reference="0fZ-e0-ZJZ"/>
-                                                <include reference="IvT-DU-ksl"/>
+                                                <exclude reference="0fZ-e0-ZJZ"/>
+                                                <exclude reference="IvT-DU-ksl"/>
                                                 <exclude reference="R8t-vf-UZl"/>
                                                 <exclude reference="SsU-0z-bfF"/>
                                                 <include reference="fUH-nW-BDo"/>
@@ -1222,7 +1216,7 @@ zoom, rotate, reposition.</string>
                                         </variation>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gridy-name-small-green" translatesAutoresizingMaskIntoConstraints="NO" id="CCp-XA-RnU">
-                                        <rect key="frame" x="614" y="0.0" width="70" height="35"/>
+                                        <rect key="frame" x="164.5" y="0.0" width="85" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="Cb0-Wa-SZ9">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="85"/>
@@ -1247,7 +1241,7 @@ zoom, rotate, reposition.</string>
                                         </variation>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mlq-EZ-azF">
-                                        <rect key="frame" x="748" y="0.0" width="50" height="35"/>
+                                        <rect key="frame" x="369" y="0.0" width="35" height="35"/>
                                         <color key="backgroundColor" red="0.53333333329999999" green="0.83137254900000002" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1298,6 +1292,7 @@ zoom, rotate, reposition.</string>
                                     <constraint firstItem="Mlq-EZ-azF" firstAttribute="leading" secondItem="DIW-AH-2r8" secondAttribute="trailing" constant="8" id="D2W-YE-TlZ"/>
                                     <constraint firstAttribute="bottom" secondItem="9BB-FK-4xt" secondAttribute="bottom" id="HIW-Y6-s3b"/>
                                     <constraint firstAttribute="height" constant="35" id="J87-oi-sSd"/>
+                                    <constraint firstItem="DIW-AH-2r8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CCp-XA-RnU" secondAttribute="trailing" constant="16" id="Kqg-bC-Oiw"/>
                                     <constraint firstAttribute="bottom" secondItem="DIW-AH-2r8" secondAttribute="bottom" constant="5" id="MFt-AK-O7G">
                                         <variation key="heightClass=compact-widthClass=regular" constant="8"/>
                                     </constraint>
@@ -1306,7 +1301,9 @@ zoom, rotate, reposition.</string>
                                     <constraint firstItem="DIW-AH-2r8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CCp-XA-RnU" secondAttribute="trailing" constant="5" id="VKb-gi-Ikh"/>
                                     <constraint firstItem="9BB-FK-4xt" firstAttribute="leading" secondItem="HM0-MF-Og3" secondAttribute="leading" constant="10" id="WpN-2Q-uV6"/>
                                     <constraint firstItem="CCp-XA-RnU" firstAttribute="centerX" secondItem="HM0-MF-Og3" secondAttribute="centerX" id="XH8-i2-cAn"/>
-                                    <constraint firstItem="9BB-FK-4xt" firstAttribute="leading" secondItem="HM0-MF-Og3" secondAttribute="leading" constant="16" id="YQe-AY-gbj"/>
+                                    <constraint firstItem="9BB-FK-4xt" firstAttribute="leading" secondItem="HM0-MF-Og3" secondAttribute="leading" constant="16" id="YQe-AY-gbj">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="9"/>
+                                    </constraint>
                                     <constraint firstItem="Mlq-EZ-azF" firstAttribute="top" secondItem="HM0-MF-Og3" secondAttribute="top" id="bgd-l2-drb"/>
                                     <constraint firstAttribute="trailing" secondItem="Mlq-EZ-azF" secondAttribute="trailing" constant="10" id="bnb-gl-jBw"/>
                                     <constraint firstAttribute="bottom" secondItem="Mlq-EZ-azF" secondAttribute="bottom" id="fWv-HH-RGc"/>
@@ -1334,6 +1331,7 @@ zoom, rotate, reposition.</string>
                                         <exclude reference="o9z-8h-PlI"/>
                                         <exclude reference="92Y-3s-1S1"/>
                                         <exclude reference="ChJ-Zb-jfp"/>
+                                        <exclude reference="Kqg-bC-Oiw"/>
                                         <exclude reference="MFt-AK-O7G"/>
                                         <exclude reference="sbN-vL-ZfR"/>
                                         <exclude reference="v5Y-ja-mvB"/>
@@ -1355,13 +1353,14 @@ zoom, rotate, reposition.</string>
                                         <include reference="3C0-zK-pfg"/>
                                         <exclude reference="gBN-pP-H3r"/>
                                         <include reference="o9z-8h-PlI"/>
-                                        <include reference="92Y-3s-1S1"/>
-                                        <include reference="ChJ-Zb-jfp"/>
+                                        <exclude reference="92Y-3s-1S1"/>
+                                        <exclude reference="ChJ-Zb-jfp"/>
+                                        <include reference="Kqg-bC-Oiw"/>
                                         <include reference="MFt-AK-O7G"/>
                                         <exclude reference="VKb-gi-Ikh"/>
                                         <exclude reference="kab-Eo-EBl"/>
-                                        <include reference="sbN-vL-ZfR"/>
-                                        <include reference="v5Y-ja-mvB"/>
+                                        <exclude reference="sbN-vL-ZfR"/>
+                                        <exclude reference="v5Y-ja-mvB"/>
                                         <exclude reference="2dz-kg-vCN"/>
                                         <include reference="4Ij-zS-zat"/>
                                         <exclude reference="D2W-YE-TlZ"/>
@@ -1373,7 +1372,7 @@ zoom, rotate, reposition.</string>
                                 </variation>
                             </view>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zq4-tl-vIr">
-                                <rect key="frame" x="93" y="-133" width="350" height="160"/>
+                                <rect key="frame" x="57" y="203.5" width="300" height="153"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="DO8-5e-jyB">
@@ -1401,7 +1400,7 @@ zoom, rotate, reposition.</string>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="cell" id="e7O-tH-zuG" customClass="myCell" customModule="Gridy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -1477,7 +1476,7 @@ zoom, rotate, reposition.</string>
                                 </connections>
                             </collectionView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RbP-rI-Qu4" userLabel="ConstraintsViewCV1">
-                                <rect key="frame" x="0.0" y="0.0" width="65" height="356.33333333333331"/>
+                                <rect key="frame" x="0.0" y="0.0" width="65" height="356.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="Fee-G7-dnF"/>
@@ -1494,7 +1493,7 @@ zoom, rotate, reposition.</string>
                                 </variation>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lAB-xD-yqL" userLabel="ConstraintsViewCV2">
-                                <rect key="frame" x="0.0" y="356.33333333333326" width="65" height="508"/>
+                                <rect key="frame" x="0.0" y="356.5" width="65" height="508"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="21Z-Kv-97H"/>
@@ -1511,15 +1510,19 @@ zoom, rotate, reposition.</string>
                                 </variation>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ubj-J8-8RW" userLabel="CVTwo">
-                                <rect key="frame" x="488" y="62" width="320" height="320"/>
+                                <rect key="frame" x="57" y="564.5" width="300" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="2V3-9V-KTk">
                                         <variation key="heightClass=compact-widthClass=regular" constant="320"/>
                                     </constraint>
-                                    <constraint firstAttribute="height" constant="320" id="GMX-vg-n3n"/>
+                                    <constraint firstAttribute="height" constant="320" id="GMX-vg-n3n">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="290"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" constant="300" id="X5p-b2-g0H"/>
-                                    <constraint firstAttribute="width" constant="320" id="Xes-R9-mxp"/>
+                                    <constraint firstAttribute="width" constant="320" id="Xes-R9-mxp">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="290"/>
+                                    </constraint>
                                     <constraint firstAttribute="height" constant="300" id="ZGk-pl-oWW"/>
                                     <constraint firstAttribute="width" constant="300" id="cCH-HF-a7m">
                                         <variation key="heightClass=compact-widthClass=regular" constant="320"/>
@@ -1613,7 +1616,7 @@ zoom, rotate, reposition.</string>
                                 </connections>
                             </collectionView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q6Y-ms-KY9" userLabel="PopUpView">
-                                <rect key="frame" x="318" y="77" width="260" height="260"/>
+                                <rect key="frame" x="77" y="408" width="260" height="260"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="260" id="LSh-3Z-kiR">
                                         <variation key="heightClass=regular-widthClass=regular" constant="500"/>
@@ -1624,19 +1627,18 @@ zoom, rotate, reposition.</string>
                                 </constraints>
                             </imageView>
                             <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="viy-MO-yv4">
-                                <rect key="frame" x="785" y="105" width="51" height="31"/>
+                                <rect key="frame" x="347" y="149" width="51" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="49" id="9AI-mM-cxd"/>
                                     <constraint firstAttribute="height" constant="31" id="vgO-NG-9vv"/>
                                 </constraints>
-                                <variation key="heightClass=regular-widthClass=compact" hidden="NO"/>
                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
                                 <connections>
                                     <action selector="switchButtonOn:" destination="bKF-eC-xzK" eventType="valueChanged" id="Uep-dD-941"/>
                                 </connections>
                             </switch>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sound:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xx9-6a-3Re">
-                                <rect key="frame" x="744" y="121" width="40" height="15"/>
+                                <rect key="frame" x="306" y="165" width="40" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="UHb-p2-gJN"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="eIC-gT-Dtc"/>
@@ -1668,7 +1670,7 @@ zoom, rotate, reposition.</string>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="747" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MtF-tk-jrX" userLabel="Drag pieces to the grid swipe out of the grid to undo">
-                                <rect key="frame" x="93" y="27" width="350" height="50"/>
+                                <rect key="frame" x="0.0" y="356.5" width="414" height="51.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="270" id="2fK-wO-8xB"/>
                                     <constraint firstAttribute="height" constant="60" id="94F-9Z-4qm">
@@ -1714,8 +1716,8 @@ swipe out of the grid to undo</string>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=regular">
                                     <mask key="constraints">
-                                        <include reference="fCW-8g-Mke"/>
-                                        <include reference="kr2-Cw-rdk"/>
+                                        <exclude reference="fCW-8g-Mke"/>
+                                        <exclude reference="kr2-Cw-rdk"/>
                                         <exclude reference="wBb-7N-g5l"/>
                                     </mask>
                                 </variation>
@@ -1749,8 +1751,11 @@ swipe out of the grid to undo</string>
                                 <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="MtF-tk-jrX" firstAttribute="leading" secondItem="zq4-tl-vIr" secondAttribute="leading" id="319-ii-sZR"/>
+                            <constraint firstItem="MtF-tk-jrX" firstAttribute="leading" secondItem="Fj4-jo-vWc" secondAttribute="leading" constant="16" id="31N-t1-fyY"/>
                             <constraint firstItem="MtF-tk-jrX" firstAttribute="trailing" secondItem="Fj4-jo-vWc" secondAttribute="trailing" id="4DD-YS-7zH"/>
-                            <constraint firstItem="MtF-tk-jrX" firstAttribute="top" secondItem="zq4-tl-vIr" secondAttribute="bottom" id="5Fm-cA-TRL"/>
+                            <constraint firstItem="MtF-tk-jrX" firstAttribute="top" secondItem="zq4-tl-vIr" secondAttribute="bottom" id="5Fm-cA-TRL">
+                                <variation key="heightClass=compact-widthClass=regular" constant="5"/>
+                            </constraint>
                             <constraint firstItem="ubj-J8-8RW" firstAttribute="centerY" secondItem="vvX-My-aQD" secondAttribute="centerY" id="5mW-On-Rrg">
                                 <variation key="heightClass=compact-widthClass=regular" constant="15"/>
                             </constraint>
@@ -1762,7 +1767,11 @@ swipe out of the grid to undo</string>
                             <constraint firstItem="lAB-xD-yqL" firstAttribute="leading" secondItem="Fj4-jo-vWc" secondAttribute="leading" id="9aR-WF-Rl0"/>
                             <constraint firstItem="zq4-tl-vIr" firstAttribute="centerX" secondItem="vvX-My-aQD" secondAttribute="centerX" id="A6l-aW-GKk"/>
                             <constraint firstItem="viy-MO-yv4" firstAttribute="bottom" secondItem="xx9-6a-3Re" secondAttribute="bottom" id="DDF-xE-RZw"/>
+                            <constraint firstItem="ubj-J8-8RW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zq4-tl-vIr" secondAttribute="trailing" constant="20" id="DTi-89-LxO"/>
                             <constraint firstItem="Fj4-jo-vWc" firstAttribute="trailing" secondItem="viy-MO-yv4" secondAttribute="trailing" constant="18" id="DUX-KT-xsR"/>
+                            <constraint firstItem="ubj-J8-8RW" firstAttribute="top" secondItem="Mlq-EZ-azF" secondAttribute="bottom" constant="-12" id="Dci-1i-Sqf">
+                                <variation key="heightClass=compact-widthClass=regular" constant="16"/>
+                            </constraint>
                             <constraint firstItem="zq4-tl-vIr" firstAttribute="centerY" secondItem="vvX-My-aQD" secondAttribute="centerY" id="Est-1c-QR9">
                                 <variation key="heightClass=regular-widthClass=regular" constant="-220"/>
                             </constraint>
@@ -1791,8 +1800,13 @@ swipe out of the grid to undo</string>
                             <constraint firstItem="MtF-tk-jrX" firstAttribute="centerY" secondItem="vvX-My-aQD" secondAttribute="centerY" id="Q81-37-f5I">
                                 <variation key="heightClass=regular-widthClass=regular" constant="-100"/>
                             </constraint>
+                            <constraint firstItem="Fj4-jo-vWc" firstAttribute="bottom" secondItem="ubj-J8-8RW" secondAttribute="bottom" constant="16" id="SMc-k6-eHA"/>
                             <constraint firstItem="viy-MO-yv4" firstAttribute="leading" secondItem="xx9-6a-3Re" secondAttribute="trailing" constant="1" id="SVu-fP-pBb"/>
                             <constraint firstItem="zq4-tl-vIr" firstAttribute="bottom" secondItem="RbP-rI-Qu4" secondAttribute="bottom" id="T1d-ke-KbM"/>
+                            <constraint firstItem="ubj-J8-8RW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MtF-tk-jrX" secondAttribute="trailing" constant="20" id="Tql-y1-2pr"/>
+                            <constraint firstItem="Mlq-EZ-azF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ubj-J8-8RW" secondAttribute="trailing" constant="-44" id="Vrd-2N-qcl">
+                                <variation key="heightClass=compact-widthClass=regular" constant="5"/>
+                            </constraint>
                             <constraint firstItem="MtF-tk-jrX" firstAttribute="trailing" secondItem="zq4-tl-vIr" secondAttribute="trailing" id="Wu2-2f-ffZ"/>
                             <constraint firstItem="MtF-tk-jrX" firstAttribute="top" secondItem="zq4-tl-vIr" secondAttribute="bottom" constant="8" id="XGR-fz-8vJ">
                                 <variation key="heightClass=compact-widthClass=compact" constant="5"/>
@@ -1804,6 +1818,7 @@ swipe out of the grid to undo</string>
                             <constraint firstItem="ubj-J8-8RW" firstAttribute="centerY" secondItem="vvX-My-aQD" secondAttribute="centerY" id="aKb-9K-Ibr">
                                 <variation key="heightClass=compact-widthClass=compact" constant="20"/>
                             </constraint>
+                            <constraint firstItem="Q6Y-ms-KY9" firstAttribute="centerY" secondItem="vvX-My-aQD" secondAttribute="centerY" id="aML-LE-p3R"/>
                             <constraint firstItem="MtF-tk-jrX" firstAttribute="leading" secondItem="Fj4-jo-vWc" secondAttribute="leading" id="aac-6q-uOf"/>
                             <constraint firstItem="zq4-tl-vIr" firstAttribute="centerX" secondItem="vvX-My-aQD" secondAttribute="centerX" id="af0-Zf-74N">
                                 <variation key="heightClass=compact-widthClass=regular" constant="-180"/>
@@ -1816,6 +1831,8 @@ swipe out of the grid to undo</string>
                             <constraint firstItem="MtF-tk-jrX" firstAttribute="trailing" secondItem="Fj4-jo-vWc" secondAttribute="trailing" id="eM4-H4-b9S">
                                 <variation key="heightClass=compact-widthClass=regular" constant="-376"/>
                             </constraint>
+                            <constraint firstItem="zq4-tl-vIr" firstAttribute="top" secondItem="HM0-MF-Og3" secondAttribute="bottom" constant="16" id="gc6-f2-HTr"/>
+                            <constraint firstItem="MtF-tk-jrX" firstAttribute="width" secondItem="zq4-tl-vIr" secondAttribute="width" id="hGV-6X-zIl"/>
                             <constraint firstItem="lAB-xD-yqL" firstAttribute="top" secondItem="zq4-tl-vIr" secondAttribute="bottom" id="iaN-gy-coH"/>
                             <constraint firstItem="HM0-MF-Og3" firstAttribute="trailing" secondItem="Fj4-jo-vWc" secondAttribute="trailing" id="kY9-ys-yda"/>
                             <constraint firstItem="zq4-tl-vIr" firstAttribute="centerY" secondItem="vvX-My-aQD" secondAttribute="centerY" id="kZH-Z7-XlI">
@@ -1838,11 +1855,14 @@ swipe out of the grid to undo</string>
                                 <variation key="heightClass=compact-widthClass=regular" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="Q6Y-ms-KY9" firstAttribute="centerX" secondItem="vvX-My-aQD" secondAttribute="centerX" id="qxi-hz-lfD"/>
+                            <constraint firstItem="Fj4-jo-vWc" firstAttribute="trailing" secondItem="ubj-J8-8RW" secondAttribute="trailing" constant="16" id="rWW-qS-ELw"/>
                             <constraint firstItem="ubj-J8-8RW" firstAttribute="bottom" secondItem="Fj4-jo-vWc" secondAttribute="bottom" constant="-20" id="sFd-ct-BsI">
                                 <variation key="heightClass=compact-widthClass=regular" constant="-31"/>
                             </constraint>
                             <constraint firstItem="HM0-MF-Og3" firstAttribute="leading" secondItem="Fj4-jo-vWc" secondAttribute="leading" id="sbF-jx-e9O"/>
+                            <constraint firstItem="ubj-J8-8RW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zq4-tl-vIr" secondAttribute="trailing" constant="20" id="tVx-Be-lQC"/>
                             <constraint firstItem="HM0-MF-Og3" firstAttribute="top" secondItem="Fj4-jo-vWc" secondAttribute="top" constant="10" id="uEx-AV-DzK"/>
+                            <constraint firstItem="xx9-6a-3Re" firstAttribute="leading" secondItem="Q6Y-ms-KY9" secondAttribute="trailing" constant="166" id="vCw-FK-0ur"/>
                             <constraint firstItem="RbP-rI-Qu4" firstAttribute="top" secondItem="vvX-My-aQD" secondAttribute="top" id="vPt-eh-Gw0"/>
                             <constraint firstItem="ubj-J8-8RW" firstAttribute="centerX" secondItem="vvX-My-aQD" secondAttribute="centerX" id="vQd-hk-VlP"/>
                             <constraint firstItem="ubj-J8-8RW" firstAttribute="top" secondItem="MtF-tk-jrX" secondAttribute="bottom" constant="4" id="wLN-sO-diO">
@@ -1855,6 +1875,7 @@ swipe out of the grid to undo</string>
                                 <variation key="heightClass=compact-widthClass=compact" constant="145"/>
                             </constraint>
                             <constraint firstItem="zq4-tl-vIr" firstAttribute="leading" secondItem="Fj4-jo-vWc" secondAttribute="leading" constant="16" id="x1v-4N-cFx"/>
+                            <constraint firstItem="zq4-tl-vIr" firstAttribute="leading" secondItem="Fj4-jo-vWc" secondAttribute="leading" constant="16" id="xHw-Ps-fQW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fj4-jo-vWc"/>
                         <variation key="default">
@@ -1869,6 +1890,8 @@ swipe out of the grid to undo</string>
                                 <exclude reference="8Af-U0-53a"/>
                                 <exclude reference="9aR-WF-Rl0"/>
                                 <exclude reference="iaN-gy-coH"/>
+                                <exclude reference="SMc-k6-eHA"/>
+                                <exclude reference="rWW-qS-ELw"/>
                                 <exclude reference="0Px-wo-WIq"/>
                                 <exclude reference="kY9-ys-yda"/>
                                 <exclude reference="nyw-Wn-LVt"/>
@@ -1880,11 +1903,14 @@ swipe out of the grid to undo</string>
                                 <exclude reference="T1d-ke-KbM"/>
                                 <exclude reference="Zvs-L7-doO"/>
                                 <exclude reference="af0-Zf-74N"/>
+                                <exclude reference="gc6-f2-HTr"/>
                                 <exclude reference="kZH-Z7-XlI"/>
                                 <exclude reference="mOD-eQ-hcn"/>
                                 <exclude reference="x1v-4N-cFx"/>
+                                <exclude reference="xHw-Ps-fQW"/>
                                 <exclude reference="0wz-ph-pV6"/>
                                 <exclude reference="319-ii-sZR"/>
+                                <exclude reference="31N-t1-fyY"/>
                                 <exclude reference="4DD-YS-7zH"/>
                                 <exclude reference="8cH-fD-oTh"/>
                                 <exclude reference="Kkh-ZE-aNW"/>
@@ -1896,18 +1922,26 @@ swipe out of the grid to undo</string>
                                 <exclude reference="Wu2-2f-ffZ"/>
                                 <exclude reference="XGR-fz-8vJ"/>
                                 <exclude reference="aac-6q-uOf"/>
+                                <exclude reference="hGV-6X-zIl"/>
                                 <exclude reference="m9p-fr-Obc"/>
+                                <exclude reference="aML-LE-p3R"/>
                                 <exclude reference="2Nt-JD-5So"/>
                                 <exclude reference="5mW-On-Rrg"/>
+                                <exclude reference="DTi-89-LxO"/>
+                                <exclude reference="Dci-1i-Sqf"/>
                                 <exclude reference="Pz3-7e-EDC"/>
+                                <exclude reference="Tql-y1-2pr"/>
                                 <exclude reference="XiO-bi-roh"/>
                                 <exclude reference="aKb-9K-Ibr"/>
                                 <exclude reference="bd0-VG-NZV"/>
                                 <exclude reference="m3P-NZ-owK"/>
                                 <exclude reference="olS-EF-mf7"/>
+                                <exclude reference="tVx-Be-lQC"/>
                                 <exclude reference="vQd-hk-VlP"/>
                                 <exclude reference="whJ-QX-U4h"/>
                                 <exclude reference="bbl-Me-4PT"/>
+                                <exclude reference="vCw-FK-0ur"/>
+                                <exclude reference="Vrd-2N-qcl"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
@@ -1919,7 +1953,6 @@ swipe out of the grid to undo</string>
                                 <exclude reference="Zvs-L7-doO"/>
                                 <exclude reference="kZH-Z7-XlI"/>
                                 <include reference="x1v-4N-cFx"/>
-                                <exclude reference="2cr-CW-wVK"/>
                                 <exclude reference="319-ii-sZR"/>
                                 <exclude reference="5Fm-cA-TRL"/>
                                 <include reference="Kkh-ZE-aNW"/>
@@ -1931,6 +1964,7 @@ swipe out of the grid to undo</string>
                                 <include reference="XGR-fz-8vJ"/>
                                 <exclude reference="eM4-H4-b9S"/>
                                 <exclude reference="wWV-uS-FcU"/>
+                                <exclude reference="2cr-CW-wVK"/>
                                 <exclude reference="O8q-kG-XK0"/>
                                 <include reference="XiO-bi-roh"/>
                                 <include reference="aKb-9K-Ibr"/>
@@ -1944,6 +1978,8 @@ swipe out of the grid to undo</string>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
+                                <exclude reference="SMc-k6-eHA"/>
+                                <include reference="rWW-qS-ELw"/>
                                 <include reference="0Px-wo-WIq"/>
                                 <exclude reference="Lf6-dD-iRS"/>
                                 <include reference="kY9-ys-yda"/>
@@ -1952,17 +1988,30 @@ swipe out of the grid to undo</string>
                                 <exclude reference="uEx-AV-DzK"/>
                                 <exclude reference="HJF-e4-F99"/>
                                 <exclude reference="JYc-hb-uE4"/>
-                                <include reference="af0-Zf-74N"/>
-                                <include reference="mOD-eQ-hcn"/>
-                                <include reference="0wz-ph-pV6"/>
-                                <include reference="8cH-fD-oTh"/>
+                                <exclude reference="af0-Zf-74N"/>
+                                <include reference="gc6-f2-HTr"/>
+                                <exclude reference="mOD-eQ-hcn"/>
+                                <include reference="xHw-Ps-fQW"/>
+                                <exclude reference="0wz-ph-pV6"/>
+                                <include reference="31N-t1-fyY"/>
+                                <exclude reference="8cH-fD-oTh"/>
                                 <exclude reference="eM4-H4-b9S"/>
+                                <include reference="hGV-6X-zIl"/>
                                 <exclude reference="wWV-uS-FcU"/>
-                                <include reference="5mW-On-Rrg"/>
+                                <exclude reference="2cr-CW-wVK"/>
+                                <include reference="aML-LE-p3R"/>
+                                <exclude reference="qXg-yU-WEn"/>
+                                <exclude reference="5mW-On-Rrg"/>
+                                <include reference="DTi-89-LxO"/>
+                                <include reference="Dci-1i-Sqf"/>
                                 <exclude reference="O8q-kG-XK0"/>
-                                <include reference="Pz3-7e-EDC"/>
+                                <exclude reference="Pz3-7e-EDC"/>
+                                <include reference="Tql-y1-2pr"/>
                                 <exclude reference="sFd-ct-BsI"/>
+                                <exclude reference="tVx-Be-lQC"/>
                                 <exclude reference="wLN-sO-diO"/>
+                                <include reference="vCw-FK-0ur"/>
+                                <exclude reference="Vrd-2N-qcl"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -2022,24 +2071,24 @@ swipe out of the grid to undo</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SSo-9l-kRA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1790.5547226386807" y="-1322.4000000000001"/>
+            <point key="canvasLocation" x="1981" y="-1304"/>
         </scene>
         <!--Game Over View-->
         <scene sceneID="SVl-nC-UlI">
             <objects>
                 <viewController storyboardIdentifier="gameOverView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="g9g-aS-TFD" customClass="GameOverView" customModule="Gridy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zf1-gl-JYC">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kfu-Ju-JnB" userLabel="backgroundImage">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aru-47-6Qs">
-                                <rect key="frame" x="-2" y="1" width="898" height="413"/>
+                                <rect key="frame" x="-2" y="1" width="416" height="895"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="J9s-Eo-FZd">
-                                    <rect key="frame" x="0.0" y="0.0" width="898" height="413"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="416" height="895"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <vibrancyEffect>
@@ -2047,7 +2096,7 @@ swipe out of the grid to undo</string>
                                 </vibrancyEffect>
                             </visualEffectView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEb-E5-FQR">
-                                <rect key="frame" x="328" y="305" width="240" height="35"/>
+                                <rect key="frame" x="87" y="546" width="240" height="35"/>
                                 <color key="backgroundColor" red="0.53485649820000003" green="0.83075767759999997" blue="0.59683889150000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="j7A-0c-3qL"/>
@@ -2067,10 +2116,10 @@ swipe out of the grid to undo</string>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aan-AO-dby" userLabel="scoreListView">
-                                <rect key="frame" x="328" y="117" width="240" height="180"/>
+                                <rect key="frame" x="87" y="358" width="240" height="180"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score: " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jer-GK-Mgn">
-                                        <rect key="frame" x="8" y="27.666666666666657" width="224" height="45"/>
+                                        <rect key="frame" x="8" y="27.5" width="224" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="ebq-cC-JAO"/>
                                         </constraints>
@@ -2079,7 +2128,7 @@ swipe out of the grid to undo</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Moves: " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfD-nL-m8h">
-                                        <rect key="frame" x="8" y="67.666666666666657" width="224" height="45"/>
+                                        <rect key="frame" x="8" y="67.5" width="224" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="H0I-4n-0eg"/>
                                         </constraints>
@@ -2088,7 +2137,7 @@ swipe out of the grid to undo</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong Moves: " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ic9-cM-Aww">
-                                        <rect key="frame" x="8" y="127.66666666666666" width="224" height="45"/>
+                                        <rect key="frame" x="8" y="127.5" width="224" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="V4r-C3-2VN"/>
                                         </constraints>
@@ -2097,7 +2146,7 @@ swipe out of the grid to undo</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct Moves: " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVi-FN-ZiF">
-                                        <rect key="frame" x="8" y="97.666666666666657" width="224" height="45"/>
+                                        <rect key="frame" x="8" y="97.5" width="224" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="hSK-wh-ySm"/>
                                         </constraints>
@@ -2243,7 +2292,7 @@ swipe out of the grid to undo</string>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="RBk-lX-Uog"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X3A-DY-yfL">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

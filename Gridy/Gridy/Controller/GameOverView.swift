@@ -49,7 +49,10 @@ class GameOverView: UIViewController {
         let alert = UIAlertController(title: "Well done!", message: "Your Score: \(score) \nTotal Moves: \(moves) \nCorrect Moves: \(rightMoves) \nWrong Moves: \(moves - rightMoves)", preferredStyle: .alert)
       
         alert.addAction(UIAlertAction(title: "New Game!", style: UIAlertAction.Style.default) {(action) in
-            self.performSegue(withIdentifier: "newGameSegue", sender: self)
+            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+               appDelegate.window?.rootViewController?.dismiss(animated: true, completion: nil)
+               (appDelegate.window?.rootViewController as? UINavigationController)?.popToRootViewController(animated: true)
+            }
             })
       
         alert.addAction(UIAlertAction(title: "Share", style: .default) {(action) in

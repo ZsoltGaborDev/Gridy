@@ -8,9 +8,7 @@
 
 import UIKit
 import Photos
-//import MobileCoreServices
 import AVFoundation
-//import AudioToolbox
 
 class PlayfieldView: UIViewController, AVAudioPlayerDelegate {
     
@@ -53,6 +51,7 @@ class PlayfieldView: UIViewController, AVAudioPlayerDelegate {
         for image in fixedImages {
             if let image = image {
                 CVOneImages.append(image)
+                
             }
         }
         CVOne.dragInteractionEnabled = true

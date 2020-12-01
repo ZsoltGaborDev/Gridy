@@ -17,7 +17,7 @@ extension PlayfieldView: UICollectionViewDelegate, UICollectionViewDataSource {
 
     //MARK: - Cell For Item At
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! myCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ImageCell
         cell.layer.borderColor = UIColor(red: 243/255, green: 233/255, blue: 210/255, alpha: 1).cgColor
         cell.layer.borderWidth = 1
         cell.backgroundColor = .white

@@ -18,6 +18,8 @@ class PlayfieldView: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var popUpView: UIImageView!
     @IBOutlet weak var newGameButton: UIButton!
+    @IBOutlet weak var cellImageViewContainer: UIView!
+    
     @IBAction func switchButtonOn(_ sender: UISwitch) {
         if sender .isOn {
             soundIsOn = true

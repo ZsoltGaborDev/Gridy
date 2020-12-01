@@ -1,5 +1,5 @@
 //
-//  myCell.swift
+//  ImageCell.swift
 //  Gridy
 //
 //  Created by zsolt on 11/02/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class myCell: UICollectionViewCell {
+class ImageCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
     

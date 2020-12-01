@@ -14,12 +14,13 @@
 		D72D6BBD2200C41400755600 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D72D6BBB2200C41400755600 /* Main.storyboard */; };
 		D72D6BBF2200C41800755600 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D72D6BBE2200C41800755600 /* Assets.xcassets */; };
 		D72D6BC22200C41800755600 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D72D6BC02200C41800755600 /* LaunchScreen.storyboard */; };
+		D72E0C5D2576E5D900212CE0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72E0C5C2576E5D900212CE0 /* Extensions.swift */; };
 		D72EDAAC228C8DFD008919DA /* oookay.wav in Resources */ = {isa = PBXBuildFile; fileRef = D72EDAAB228C8DFC008919DA /* oookay.wav */; };
 		D7379C9422036CE100813362 /* ImageEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7379C9322036CE000813362 /* ImageEditorView.swift */; };
 		D7379C9622036EB200813362 /* PlayfieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7379C9522036EB200813362 /* PlayfieldView.swift */; };
 		D737BF91224D276C00EDE9C7 /* Playfield+DragDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D737BF90224D276C00EDE9C7 /* Playfield+DragDrop.swift */; };
 		D737BF93224D2A1900EDE9C7 /* Playfield+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D737BF92224D2A1900EDE9C7 /* Playfield+Delegates.swift */; };
-		D76B459A2211F75F001A999F /* myCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76B45992211F75F001A999F /* myCell.swift */; };
+		D76B459A2211F75F001A999F /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76B45992211F75F001A999F /* ImageCell.swift */; };
 		D79D6161226B86AD002E18F1 /* GaveOver+Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79D6160226B86AD002E18F1 /* GaveOver+Share.swift */; };
 		D79D6163226BA5F9002E18F1 /* Playfield+Scoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79D6162226BA5F9002E18F1 /* Playfield+Scoring.swift */; };
 		D7A88B18220327BE000A9BCC /* timeburnernormal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7A88B17220327BE000A9BCC /* timeburnernormal.ttf */; };
@@ -35,12 +36,13 @@
 		D72D6BBE2200C41800755600 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D72D6BC12200C41800755600 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D72D6BC32200C41800755600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D72E0C5C2576E5D900212CE0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D72EDAAB228C8DFC008919DA /* oookay.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = oookay.wav; sourceTree = "<group>"; };
 		D7379C9322036CE000813362 /* ImageEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorView.swift; sourceTree = "<group>"; };
 		D7379C9522036EB200813362 /* PlayfieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayfieldView.swift; sourceTree = "<group>"; };
 		D737BF90224D276C00EDE9C7 /* Playfield+DragDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Playfield+DragDrop.swift"; sourceTree = "<group>"; };
 		D737BF92224D2A1900EDE9C7 /* Playfield+Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Playfield+Delegates.swift"; sourceTree = "<group>"; };
-		D76B45992211F75F001A999F /* myCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCell.swift; sourceTree = "<group>"; };
+		D76B45992211F75F001A999F /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		D79D6160226B86AD002E18F1 /* GaveOver+Share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GaveOver+Share.swift"; sourceTree = "<group>"; };
 		D79D6162226BA5F9002E18F1 /* Playfield+Scoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Playfield+Scoring.swift"; sourceTree = "<group>"; };
 		D7A88B17220327BE000A9BCC /* timeburnernormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnernormal.ttf; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				D72D6BC92200C54200755600 /* Model */,
 				D72D6BCA2200C55C00755600 /* View */,
 				D72D6BCB2200C58200755600 /* Controller */,
+				D72E0C592576E26F00212CE0 /* Components */,
 				D72D6BCC2200C5A300755600 /* Supporting Files */,
 			);
 			path = Gridy;
@@ -103,7 +106,6 @@
 		D72D6BCB2200C58200755600 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D76B45992211F75F001A999F /* myCell.swift */,
 				D729C3992205DF4200A0D3C0 /* ViewController.swift */,
 				D7379C9322036CE000813362 /* ImageEditorView.swift */,
 				D7379C9522036EB200813362 /* PlayfieldView.swift */,
@@ -119,6 +121,7 @@
 		D72D6BCC2200C5A300755600 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D72E0C5C2576E5D900212CE0 /* Extensions.swift */,
 				D72D6BB72200C41400755600 /* AppDelegate.swift */,
 				D72D6BC02200C41800755600 /* LaunchScreen.storyboard */,
 				D72D6BC32200C41800755600 /* Info.plist */,
@@ -127,6 +130,14 @@
 				D72D6BBE2200C41800755600 /* Assets.xcassets */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D72E0C592576E26F00212CE0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D76B45992211F75F001A999F /* ImageCell.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,7 +167,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = zsolt;
 				TargetAttributes = {
 					D72D6BB32200C41400755600 = {
@@ -210,8 +221,9 @@
 				D7379C9422036CE100813362 /* ImageEditorView.swift in Sources */,
 				D72D6BB82200C41400755600 /* AppDelegate.swift in Sources */,
 				D737BF93224D2A1900EDE9C7 /* Playfield+Delegates.swift in Sources */,
+				D72E0C5D2576E5D900212CE0 /* Extensions.swift in Sources */,
 				D79D6163226BA5F9002E18F1 /* Playfield+Scoring.swift in Sources */,
-				D76B459A2211F75F001A999F /* myCell.swift in Sources */,
+				D76B459A2211F75F001A999F /* ImageCell.swift in Sources */,
 				D72A1C9222709AC600E276E6 /* GameOverView.swift in Sources */,
 				D7379C9622036EB200813362 /* PlayfieldView.swift in Sources */,
 			);
@@ -265,6 +277,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -290,7 +303,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -326,6 +339,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -345,7 +359,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -92,6 +92,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 self.presentImagePicker(sourceType: sourceType)
             case .denied, .restricted:
                 self.troubleAlert(message: noPermissionStatusMessage)
+            case .limited:
+                self.troubleAlert(message: noPermissionStatusMessage)
             @unknown default:
                 self.presentImagePicker(sourceType: sourceType)
            

@@ -40,6 +40,8 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
         super.viewDidLoad()
         setImage()
         
+        creationImageView.applyshadowWithCorner(containerView: creationFrame, cornerRadious: 15)
+        
         // Create gesture with target self(viewcontroller) and handler function.
         self.panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.handlePan(recognizer:)))
         self.pinchRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(self.handlePinch(recognizer:)))
